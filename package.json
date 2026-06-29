@@ -13,7 +13,7 @@
     "next": "^15.4.11",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "unframer": "^4.1.9"
+    "unframer": "^4.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
