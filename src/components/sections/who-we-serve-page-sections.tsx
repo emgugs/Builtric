@@ -135,10 +135,10 @@ const coreBenefits = [
 function WhoWeServeHero() {
   return (
     <>
-      <section className="flex w-full justify-center overflow-hidden px-9 pb-9 pt-[108px]">
+      <section className="flex w-full justify-center overflow-hidden px-site pb-9 pt-[108px]">
         <div className="flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-1 flex-col gap-2.5">
-            <h1 className="max-w-[94%] font-archivo text-[56px] font-bold leading-none text-primary-black">
+            <h1 className="t-display max-w-[94%] text-primary-black">
               The right tools for every role
             </h1>
             <BuiltricButtonGroup className="py-3">
@@ -146,7 +146,7 @@ function WhoWeServeHero() {
               <BuiltricButton label="Try Now" href="/builtric-demo" variant="cta" />
             </BuiltricButtonGroup>
           </div>
-          <p className="max-w-xl flex-1 font-archivo text-[36px] leading-[1.3] text-primary-black">
+          <p className="t-subheading max-w-xl flex-1 text-primary-black">
             Builtric delivers powerful construction management tools for every key player, keeping
             the entire project aligned around a single, reliable source of truth
           </p>
@@ -162,7 +162,7 @@ function WhoWeServeHero() {
 
 function BenefitText({ title, description }: { title: string; description: string }) {
   return (
-    <p className="font-inter text-base leading-[1.3] tracking-[-0.01em] text-primary-black">
+    <p className="t-body text-primary-black">
       <span className="font-bold">{title}</span>
       {description}
     </p>
@@ -179,10 +179,10 @@ function RoleSectionBlock({ section, id }: { section: RoleSection; id?: string }
   const textEl = (
     <div className="flex flex-1 flex-col gap-6">
       <div className="flex flex-col gap-2.5">
-        <h2 className="font-archivo text-[56px] font-bold leading-[1.1] text-primary-black">
+        <h2 className="t-heading text-primary-black">
           {section.title}
         </h2>
-        <p className="font-archivo text-[36px] leading-[1.3] text-primary-black">{section.subtitle}</p>
+        <p className="t-subheading text-primary-black">{section.subtitle}</p>
       </div>
       <div className="flex flex-col gap-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -202,7 +202,7 @@ function RoleSectionBlock({ section, id }: { section: RoleSection; id?: string }
   return (
     <section
       id={id}
-      className={`flex w-full justify-center px-9 py-14 ${
+      className={`flex w-full justify-center px-site py-14 ${
         section.background === 'muted' ? 'bg-primary-white' : 'bg-white'
       }`}
     >
@@ -225,12 +225,12 @@ function RoleSectionBlock({ section, id }: { section: RoleSection; id?: string }
 
 function CoreBenefitsSection() {
   return (
-    <section className="flex w-full flex-col items-center gap-11 overflow-hidden px-8 py-[78px]">
+    <section className="flex w-full flex-col items-center gap-11 overflow-hidden px-site py-[78px]">
       <div className="max-w-3xl text-center">
-        <h2 className="font-archivo text-[56px] font-bold leading-[1.1] text-primary-black">
+        <h2 className="t-heading text-primary-black">
           Core benefits for every role
         </h2>
-        <p className="mx-auto mt-2.5 max-w-md font-inter text-base leading-[1.3] text-primary-black">
+        <p className="t-body mx-auto mt-2.5 max-w-md text-primary-black">
           Builtric eliminates silos and connects every stakeholder to a single source of truth
         </p>
       </div>
@@ -242,10 +242,10 @@ function CoreBenefitsSection() {
           >
             <Image src={item.image} alt="" width={100} height={100} />
             <div className="flex flex-col gap-1.5 px-2">
-              <h3 className="font-archivo text-2xl font-bold leading-none tracking-[-0.02em] text-primary-black">
+              <h3 className="t-title text-primary-black">
                 {item.title}
               </h3>
-              <p className="font-inter text-base leading-[1.3] text-primary-black">
+              <p className="t-body text-primary-black">
                 {item.description}
               </p>
             </div>

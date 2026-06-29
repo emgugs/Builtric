@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+
 const fieldClassName =
   'h-10 w-full rounded-[10px] border border-[rgba(136,136,136,0.1)] bg-white px-3 font-inter text-sm leading-[1.2] text-primary-black outline-none transition-colors placeholder:text-[#999999] focus:border-[#0099ff] focus:ring-1 focus:ring-[#0099ff]'
 
@@ -40,19 +42,22 @@ function SelectField({
   name,
   options,
   required = true,
+  disabled = false,
 }: {
   label: string
   name: string
   options: string[]
   required?: boolean
+  disabled?: boolean
 }) {
   return (
     <FormField label={label}>
       <select
         name={name}
         required={required}
+        disabled={disabled}
         defaultValue=""
-        className={`${fieldClassName} text-[#999999] [&:valid]:text-primary-black`}
+        className={`${fieldClassName} text-[#999999] [&:valid]:text-primary-black disabled:cursor-not-allowed disabled:opacity-60`}
       >
         <option value="" disabled>
           Select…
@@ -68,47 +73,114 @@ function SelectField({
 }
 
 export function CustomQuotePageForm() {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setStatus('loading')
+    setErrorMessage('')
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    const payload = {
+      constructionWork: String(formData.get('constructionWork') ?? ''),
+      projectsPerYear: String(formData.get('projectsPerYear') ?? ''),
+      projectSize: String(formData.get('projectSize') ?? ''),
+      teamMembers: String(formData.get('teamMembers') ?? ''),
+      mobileApp: String(formData.get('mobileApp') ?? ''),
+      integrations: String(formData.get('integrations') ?? ''),
+      startTimeline: String(formData.get('startTimeline') ?? ''),
+      fullName: String(formData.get('fullName') ?? ''),
+      companyName: String(formData.get('companyName') ?? ''),
+      email: String(formData.get('email') ?? ''),
+      countryCode: String(formData.get('countryCode') ?? ''),
+      phone: String(formData.get('phone') ?? ''),
+    }
+
+    try {
+      const response = await fetch('/api/custom-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      const data = (await response.json()) as { error?: string }
+
+      if (!response.ok) {
+        throw new Error(data.error ?? 'Something went wrong. Please try again.')
+      }
+
+      setStatus('success')
+      form.reset()
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again.')
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div className="flex w-full flex-col gap-4 p-5 text-center">
+        <h2 className="t-title text-primary-black">Thank you!</h2>
+        <p className="t-body text-primary-black">
+          Your quote request has been submitted. Our sales team will be in touch shortly.
+        </p>
+        <button
+          type="button"
+          onClick={() => setStatus('idle')}
+          className="h-10 w-full rounded-md bg-primary-black font-inter text-sm font-semibold text-white transition-colors hover:bg-[rgb(47,53,61)]"
+        >
+          Submit another request
+        </button>
+      </div>
+    )
+  }
+
   return (
-    <form
-      className="flex w-full flex-col gap-5 p-5"
-      onSubmit={(event) => {
-        event.preventDefault()
-      }}
-    >
+    <form className="flex w-full flex-col gap-5 p-5" onSubmit={handleSubmit}>
       <SelectField
         label="What kind of construction work do you primarily undertake?"
         name="constructionWork"
         options={['Residential', 'Commercial', 'Industrial', 'Infrastructre', 'Mixed']}
+        disabled={status === 'loading'}
       />
       <SelectField
         label="How many projects do you manage per year?"
         name="projectsPerYear"
         options={['1-5', '6-20', '21-50', '50+']}
+        disabled={status === 'loading'}
       />
       <SelectField
         label="What is your average project size (budget)?"
         name="projectSize"
         options={['Under $100k', '$100k-$500k', '$500k-$2M', '$2M+']}
+        disabled={status === 'loading'}
       />
       <SelectField
         label="How many team members need access to the software?"
         name="teamMembers"
         options={['1-5', '6-20', '21-50', '50+']}
+        disabled={status === 'loading'}
       />
       <SelectField
         label="Do you require mobile app support for field teams?"
         name="mobileApp"
         options={['Yes', 'No', 'Nice to have']}
+        disabled={status === 'loading'}
       />
       <SelectField
         label="Do you need integrations?"
         name="integrations"
         options={['Accounting systems', 'BIM', 'ERP', 'Cloud storage', 'Other']}
+        disabled={status === 'loading'}
       />
       <SelectField
         label="When do you plan to start using the software?"
         name="startTimeline"
         options={['Immediately', '1-3 months', '3-6 months', 'Just exploring']}
+        disabled={status === 'loading'}
       />
 
       <FormField label="Full name">
@@ -116,6 +188,7 @@ export function CustomQuotePageForm() {
           name="fullName"
           type="text"
           required
+          disabled={status === 'loading'}
           placeholder="Jane Smith"
           className={fieldClassName}
         />
@@ -126,6 +199,7 @@ export function CustomQuotePageForm() {
           name="companyName"
           type="text"
           required
+          disabled={status === 'loading'}
           placeholder="Company"
           className={fieldClassName}
         />
@@ -136,6 +210,7 @@ export function CustomQuotePageForm() {
           name="email"
           type="email"
           required
+          disabled={status === 'loading'}
           placeholder="john.doe@company.com"
           className={fieldClassName}
         />
@@ -146,8 +221,9 @@ export function CustomQuotePageForm() {
           <select
             name="countryCode"
             defaultValue="US"
+            disabled={status === 'loading'}
             aria-label="Country code selector"
-            className="h-10 shrink-0 rounded-lg border border-[rgb(238,238,238)] bg-white px-4 font-inter text-sm text-primary-black outline-none focus:border-[#0099ff] focus:bg-[rgb(245,245,245)]"
+            className="h-10 shrink-0 rounded-lg border border-[rgb(238,238,238)] bg-white px-4 font-inter text-sm text-primary-black outline-none focus:border-[#0099ff] focus:bg-[rgb(245,245,245)] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {COUNTRY_CODES.map((country) => (
               <option key={country.code} value={country.code}>
@@ -158,18 +234,26 @@ export function CustomQuotePageForm() {
           <input
             name="phone"
             type="tel"
+            disabled={status === 'loading'}
             placeholder="Phone number"
             aria-label="Phone number input"
-            className="h-10 min-w-0 flex-1 rounded-lg border border-[rgb(238,238,238)] bg-white px-4 font-inter text-sm text-primary-black outline-none placeholder:text-[#999999] focus:border-[#0099ff] focus:bg-[rgb(245,245,245)]"
+            className="h-10 min-w-0 flex-1 rounded-lg border border-[rgb(238,238,238)] bg-white px-4 font-inter text-sm text-primary-black outline-none placeholder:text-[#999999] focus:border-[#0099ff] focus:bg-[rgb(245,245,245)] disabled:cursor-not-allowed disabled:opacity-60"
           />
         </div>
       </FormField>
 
+      {status === 'error' ? (
+        <p className="rounded-md bg-red-50 px-3 py-2 font-inter text-sm text-red-700" role="alert">
+          {errorMessage}
+        </p>
+      ) : null}
+
       <button
         type="submit"
-        className="h-10 w-full rounded-md bg-primary-black font-inter text-sm font-semibold text-white transition-colors hover:bg-[rgb(47,53,61)] active:bg-[rgb(26,29,33)]"
+        disabled={status === 'loading'}
+        className="h-10 w-full rounded-md bg-primary-black font-inter text-sm font-semibold text-white transition-colors hover:bg-[rgb(47,53,61)] active:bg-[rgb(26,29,33)] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Send Request
+        {status === 'loading' ? 'Sending…' : 'Send Request'}
       </button>
 
       <p className="font-inter text-xs leading-[1.3] text-[rgb(99,99,99)]">

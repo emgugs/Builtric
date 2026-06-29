@@ -33,10 +33,10 @@ const connectedDataCards = [
 function FeaturesHero() {
   return (
     <>
-      <section className="flex w-full justify-center overflow-hidden px-9 pb-9 pt-[108px]">
+      <section className="flex w-full justify-center overflow-hidden px-site pb-9 pt-[108px]">
         <div className="flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-1 flex-col gap-2.5">
-            <h1 className="font-archivo text-[56px] font-bold leading-none text-primary-black">
+            <h1 className="t-display text-primary-black">
               One platform.
               <br />
               Total project Intelligence
@@ -45,7 +45,7 @@ function FeaturesHero() {
               <BuiltricButton label="Try Now" href="/builtric-demo" variant="cta" />
             </div>
           </div>
-          <p className="max-w-xl flex-1 font-archivo text-[36px] leading-[1.3] text-primary-black">
+          <p className="t-subheading max-w-xl flex-1 text-primary-black">
             Unify your data, streamline operations, and gain the insights to finish on time and on
             budget
           </p>
@@ -61,12 +61,12 @@ function FeaturesHero() {
 
 function ConnectedDataSection() {
   return (
-    <section className="flex w-full flex-col items-center gap-11 bg-primary-white px-9 py-[160px]">
+    <section className="flex w-full flex-col items-center gap-11 bg-primary-white px-site py-[160px]">
       <div className="max-w-3xl text-center">
-        <h2 className="font-archivo text-[56px] font-bold leading-[1.1] text-primary-black">
+        <h2 className="t-heading text-primary-black">
           Connected data. Better decisions
         </h2>
-        <p className="mx-auto mt-2.5 max-w-md font-inter text-base leading-[1.3] text-primary-black">
+        <p className="t-body mx-auto mt-2.5 max-w-md text-primary-black">
           Builtric connects every team and data source into one structured platform so your
           decisions are powered by insight, not guesswork
         </p>
@@ -79,10 +79,10 @@ function ConnectedDataSection() {
           >
             <Image src={item.image} alt="" width={100} height={100} />
             <div className="flex flex-col gap-1.5 px-2">
-              <h3 className="font-archivo text-2xl font-bold leading-none tracking-[-0.02em] text-primary-black">
+              <h3 className="t-title text-primary-black">
                 {item.title}
               </h3>
-              <p className="font-inter text-base leading-[1.3] text-primary-black">
+              <p className="t-body text-primary-black">
                 {item.description}
               </p>
             </div>

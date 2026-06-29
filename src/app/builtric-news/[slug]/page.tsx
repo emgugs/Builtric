@@ -16,13 +16,13 @@ export default function NewsArticlePage() {
 
   return (
     <SiteShell>
-      <article className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-24">
-        <Link href="/builtric-news" className="text-sm font-medium text-dark-grey hover:underline">
+      <article className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-site py-24">
+        <Link href="/builtric-news" className="t-small font-medium text-dark-grey hover:underline">
           ← Back to news
         </Link>
-        <h1 className="font-archivo text-4xl font-bold md:text-5xl">{article.title}</h1>
-        <p className="text-lg text-dark-grey">{article.excerpt}</p>
-        <div className="space-y-4 text-base leading-relaxed text-dark-grey">
+        <h1 className="t-heading text-primary-black">{article.title}</h1>
+        <p className="t-body-lg text-dark-grey">{article.excerpt}</p>
+        <div className="t-body space-y-4 text-dark-grey">
           <p>
             This article is synced from the Builtric Framer CMS. Replace this placeholder body with
             CMS content when Payload is connected.

@@ -32,11 +32,11 @@ export function TestimonialsSection() {
       className="flex w-full flex-col items-center gap-11 overflow-hidden py-10"
       style={{ background: TESTIMONIALS_GRADIENT }}
     >
-      <h2 className="max-w-3xl px-6 text-center font-archivo text-[40px] font-bold leading-[1.1] tracking-[-0.02em] text-primary-black min-[810px]:text-[56px]">
+      <h2 className="t-heading max-w-3xl px-site text-center text-primary-black">
         See how companies build with Builtric
       </h2>
       <div className="w-full overflow-x-auto py-[22px]">
-        <div className="mx-auto flex w-max min-w-full justify-center gap-5 px-[35px] min-[810px]:w-full min-[810px]:max-w-none min-[810px]:flex-wrap">
+        <div className="mx-auto flex w-max min-w-full justify-center gap-5 px-site min-[810px]:w-full min-[810px]:max-w-none min-[810px]:flex-wrap">
           {testimonials.map((item) => (
             <FramerTestimonial
               key={item.name}

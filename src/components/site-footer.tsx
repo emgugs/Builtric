@@ -4,9 +4,10 @@ import Link from 'next/link'
 import { BuiltricLogo } from '@/components/builtric-logo'
 
 const FOOTER_LINK_CLASS =
-  'font-inter text-sm font-light leading-[1.3] text-primary-white no-underline transition-colors hover:text-[#999999]'
+  'font-inter text-sm font-light leading-[1.3] text-primary-white/90 no-underline transition-colors hover:text-primary-white'
 
-const FOOTER_HEADING_CLASS = 'font-archivo text-sm font-semibold leading-[1.3] text-primary-white'
+const FOOTER_HEADING_CLASS =
+  'font-archivo text-sm font-semibold leading-[1.3] tracking-[-0.01em] text-primary-white'
 
 const NEW_TO_BUILTRIC_LINKS = [
   { label: 'Features', href: '/builtric-features' },
@@ -17,7 +18,6 @@ const NEW_TO_BUILTRIC_LINKS = [
 const ABOUT_BUILTRIC_LINKS = [
   { label: 'About Us', href: '/builtric-about' },
   { label: 'Contact', href: '/builtric-contact' },
-  { label: 'News', href: '/builtric-news' },
   { label: 'Legal', href: '/builtric-legal' },
 ] as const
 
@@ -29,18 +29,14 @@ function FooterColumn({
   links: ReadonlyArray<{ label: string; href: string }>
 }) {
   return (
-    <div className="flex flex-col items-center gap-2.5 md:items-start md:gap-2.5">
+    <div className="flex flex-col items-center gap-2.5 md:items-start">
       <p className={FOOTER_HEADING_CLASS}>{title}</p>
       <ul className="flex flex-col items-center gap-5 md:items-start md:gap-[5px]">
         {links.map((link) => (
           <li key={link.label}>
-            {link.href === '#' ? (
-              <span className={FOOTER_LINK_CLASS}>{link.label}</span>
-            ) : (
-              <Link href={link.href} className={FOOTER_LINK_CLASS}>
-                {link.label}
-              </Link>
-            )}
+            <Link href={link.href} className={FOOTER_LINK_CLASS}>
+              {link.label}
+            </Link>
           </li>
         ))}
       </ul>
@@ -50,9 +46,9 @@ function FooterColumn({
 
 export function SiteFooter() {
   return (
-    <footer className="relative w-full overflow-hidden bg-primary-black px-9 py-9 text-primary-white">
+    <footer className="relative w-full overflow-hidden bg-primary-black px-site py-12 text-primary-white md:min-h-[373px] md:py-9">
       <div
-        className="pointer-events-none absolute right-0 top-0 h-full w-[min(60%,574px)] opacity-[0.23]"
+        className="pointer-events-none absolute left-[-120px] top-[-57px] h-[525px] w-[575px] opacity-[0.23] md:left-auto md:right-0 md:top-0 md:h-full md:w-[min(60%,574px)]"
         aria-hidden
       >
         <svg
@@ -68,30 +64,33 @@ export function SiteFooter() {
         </svg>
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-7 md:gap-2.5">
-        <div className="flex flex-col items-center gap-7 md:items-start md:gap-[18px]">
-          <div className="flex w-full flex-col items-center gap-11 pb-7 md:flex-row md:items-start md:justify-between md:gap-[106px] md:py-3.5">
-            <FooterColumn title="New to Builtric?" links={NEW_TO_BUILTRIC_LINKS} />
-            <FooterColumn title="About Builtric" links={ABOUT_BUILTRIC_LINKS} />
-          </div>
+      <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-7 md:gap-[18px]">
+        <Link href="/" aria-label="Builtric home" className="w-fit">
+          <BuiltricLogo variant="light" />
+        </Link>
+
+        <div className="flex w-full flex-col items-center gap-11 md:flex-row md:items-start md:gap-[106px] md:py-3.5">
+          <FooterColumn title="New to Builtric?" links={NEW_TO_BUILTRIC_LINKS} />
+          <FooterColumn title="About Builtric" links={ABOUT_BUILTRIC_LINKS} />
         </div>
 
-        <div className="flex flex-col items-center gap-9 md:flex-row md:items-center md:justify-between md:gap-14">
-          <div className="order-2 flex flex-col items-center gap-7 md:order-1 md:flex-row md:items-center md:gap-[30px]">
-            <Link href="/" aria-label="Builtric home">
-              <BuiltricLogo variant="light" />
-            </Link>
-            <p className="text-center font-inter text-[10px] font-normal leading-[1.3] text-primary-white md:text-left">
-              A product built by <strong className="font-bold">LMKR</strong>
-            </p>
-          </div>
+        <div className="flex flex-col items-center gap-9 border-t border-white/10 pt-9 md:flex-row md:items-center md:justify-between md:gap-14 md:pt-10">
+          <p className="text-center font-inter text-[10px] font-normal leading-[1.3] text-primary-white/80 md:text-left">
+            A product built by <strong className="font-bold text-primary-white">LMKR</strong>
+          </p>
 
-          <div className="order-1 flex items-center gap-2.5 md:order-2 md:gap-10">
-            <Link href="/builtric-legal" className={`${FOOTER_LINK_CLASS} text-[11px] md:text-[10px]`}>
+          <div className="flex items-center gap-6 md:gap-10">
+            <Link
+              href="/builtric-legal"
+              className="font-inter text-[11px] font-light leading-[1.3] text-primary-white/90 no-underline transition-colors hover:text-primary-white md:text-[10px]"
+            >
               Privacy Notice
             </Link>
             <span className="h-[13px] w-px bg-white/20" aria-hidden />
-            <Link href="/builtric-legal" className={`${FOOTER_LINK_CLASS} text-[11px] md:text-[10px]`}>
+            <Link
+              href="/builtric-legal"
+              className="font-inter text-[11px] font-light leading-[1.3] text-primary-white/90 no-underline transition-colors hover:text-primary-white md:text-[10px]"
+            >
               Terms of Service
             </Link>
           </div>

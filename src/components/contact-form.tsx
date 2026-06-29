@@ -6,7 +6,7 @@ type ContactFormProps = {
 export function ContactForm({ title = 'Get in touch', submitLabel = 'Submit' }: ContactFormProps) {
   return (
     <form className="mx-auto flex w-full max-w-xl flex-col gap-4 rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
-      <h2 className="font-archivo text-2xl font-bold">{title}</h2>
+      <h2 className="t-title text-primary-black">{title}</h2>
       <div className="grid gap-4 sm:grid-cols-2">
         <input
           className="rounded-lg border border-black/15 px-4 py-3 text-sm outline-none focus:border-primary-black"

@@ -51,89 +51,89 @@ const plans: Plan[] = [
 
 const comparisonMatrix: MatrixCategory[] = [
   {
-    title: 'Procurement management',
+    title: 'Procurement Management',
     rows: [
       {
-        label: 'Contract & BQQ configuration',
+        label: 'Contract & BQQ Configuration',
         included: { standard: true, professional: true, enterprise: true },
       },
     ],
   },
   {
-    title: 'Financial management',
+    title: 'Financial Management',
     rows: [
       {
-        label: 'End-to-end IPC and advanced handling',
+        label: 'End-to-End IPC and Advanced Handling',
         included: { standard: true, professional: true, enterprise: true },
       },
     ],
   },
   {
-    title: 'Project management',
+    title: 'Project Management',
     rows: [
       {
-        label: 'Project plans',
+        label: 'Project Plans',
         included: { standard: true, professional: true, enterprise: true },
       },
       {
-        label: 'Quality inspection & progress verification',
+        label: 'Quality Inspection & Progress Verification',
         included: { standard: true, professional: true, enterprise: true },
       },
     ],
   },
   {
-    title: 'Master data management',
+    title: 'Master Data Management',
     rows: [
       {
-        label: 'Centralised Item master',
+        label: 'Centralised Item Master',
         included: { standard: true, professional: true, enterprise: true },
       },
       {
-        label: 'User & contract management',
+        label: 'User & Contract Management',
         included: { standard: true, professional: true, enterprise: true },
       },
     ],
   },
   {
-    title: 'Dashboard & reporting',
+    title: 'Dashboard & Reporting',
     rows: [
       {
-        label: 'Project progress',
+        label: 'Project Progress',
         included: { standard: true, professional: true, enterprise: true },
       },
       {
-        label: 'Financials & contract health',
+        label: 'Financials & Contract Health',
         included: { standard: true, professional: true, enterprise: true },
       },
     ],
   },
   {
-    title: 'APIs for ERP integration',
+    title: 'APIs for ERP Integration',
     rows: [
       {
-        label: 'Integration with external ERP systems',
+        label: 'Integration with External ERP Systems',
         included: { standard: false, professional: true, enterprise: true },
       },
     ],
   },
   {
-    title: 'Project cost estimation',
+    title: 'Project Cost Estimation',
     rows: [
       {
-        label: 'Estimation setup and configuration',
+        label: 'Estimation Setup and Configuration',
         included: { standard: false, professional: true, enterprise: true },
       },
     ],
   },
   {
-    title: 'Dedicated success manager',
+    title: 'Dedicated Success Manager',
     rows: [
       {
-        label: 'Implementation support & optimisation',
+        label: 'Implementation Support & Optimisation',
         included: { standard: false, professional: false, enterprise: true },
       },
       {
-        label: 'Priority issue resolution',
+        label: 'Priority Issue Resolution',
         included: { standard: false, professional: false, enterprise: true },
       },
     ],
@@ -189,7 +189,7 @@ function PlanCell({ included, highlighted }: { included: boolean; highlighted?: 
 function PackagesComparisonMatrix() {
   return (
     <div
-      className="w-full max-w-[1224px] overflow-hidden rounded-[20px] bg-white"
+      className="hidden w-full max-w-[1224px] overflow-hidden rounded-[20px] bg-white min-[810px]:block"
       style={{ boxShadow: CARD_SHADOW }}
     >
       <div className="overflow-x-auto">
@@ -200,7 +200,7 @@ function PackagesComparisonMatrix() {
                 scope="col"
                 className="sticky left-0 z-20 min-w-[200px] border-b border-black/10 bg-white px-4 py-5 text-left align-bottom sm:min-w-[260px] sm:px-6"
               >
-                <span className="font-inter text-xs leading-[1.6] tracking-[-0.02em] text-primary-black/70">
+                <span className="t-small text-primary-black/70">
                   Compare plans
                 </span>
               </th>
@@ -213,17 +213,12 @@ function PackagesComparisonMatrix() {
                   } ${plan.enterprise ? 'bg-gradient-to-b from-white via-hero-yellow/15 to-white' : ''}`}
                 >
                   <div className="flex flex-col items-center gap-2 text-center">
-                    <h2 className="font-archivo text-xl font-bold leading-none tracking-[-0.02em] text-primary-black sm:text-2xl">
+                    <h2 className="t-title text-primary-black">
                       {plan.name}
                     </h2>
-                    <p className="font-inter text-xs leading-[1.4] tracking-[-0.01em] text-primary-black sm:text-sm sm:leading-[1.3]">
+                    <p className="t-small text-primary-black">
                       {plan.description}
                     </p>
-                    <BuiltricButton
-                      label="Book a demo"
-                      href="/builtric-demo"
-                      className="mt-1 h-[38px] w-full max-w-[160px] justify-center sm:h-[42px]"
-                    />
                   </div>
                 </th>
               ))}
@@ -238,7 +233,7 @@ function PackagesComparisonMatrix() {
                     colSpan={4}
                     className="sticky left-0 border-b border-black/8 px-4 py-3 text-left sm:px-6"
                   >
-                    <p className="font-inter text-base font-bold leading-[1.3] text-primary-black">
+                    <p className="t-body font-bold text-primary-black">
                       {category.title}
                     </p>
                   </th>
@@ -249,13 +244,13 @@ function PackagesComparisonMatrix() {
                       scope="row"
                       className="sticky left-0 z-10 border-b border-black/8 bg-white px-4 py-3 text-left font-normal sm:px-6 sm:py-3.5"
                     >
-                      <p className="font-inter text-sm leading-[1.5] text-primary-black sm:text-base sm:leading-[1.3]">
+                      <p className="t-body text-primary-black">
                         {row.label}
                       </p>
                       {row.details?.map((detail) => (
                         <p
                           key={detail}
-                          className="mt-1 font-inter text-xs leading-[1.6] tracking-[-0.02em] text-primary-black/70"
+                          className="t-small mt-1 text-primary-black/70"
                         >
                           {detail}
                         </p>
@@ -279,15 +274,72 @@ function PackagesComparisonMatrix() {
   )
 }
 
+function PackagesMobilePlans() {
+  return (
+    <div className="flex w-full flex-col gap-6 min-[810px]:hidden">
+      {plans.map((plan) => (
+        <article
+          key={plan.key}
+          className={`flex flex-col gap-5 overflow-hidden rounded-[20px] bg-white p-5 ${
+            plan.highlighted ? 'ring-2 ring-inset ring-hero-yellow' : ''
+          } ${plan.enterprise ? 'bg-gradient-to-b from-white via-hero-yellow/10 to-white' : ''}`}
+          style={{ boxShadow: CARD_SHADOW }}
+        >
+          <div className="flex flex-col items-center gap-2 text-center">
+            <h2 className="t-title text-primary-black">
+              {plan.name}
+            </h2>
+            <p className="t-small text-primary-black">
+              {plan.description}
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            {comparisonMatrix.map((category) => (
+              <div key={category.title} className="overflow-hidden rounded-xl bg-black/[0.03]">
+                <p className="t-body px-4 py-3 font-bold text-primary-black">
+                  {category.title}
+                </p>
+                <ul className="divide-y divide-black/8 bg-white">
+                  {category.rows.map((row) => (
+                    <li
+                      key={`${plan.key}-${category.title}-${row.label}`}
+                      className="flex items-center justify-between gap-3 px-4 py-3"
+                    >
+                      <p className="t-body min-w-0 flex-1 text-primary-black">
+                        {row.label}
+                      </p>
+                      {row.included[plan.key] ? (
+                        <TickIcon />
+                      ) : (
+                        <span
+                          className="inline-flex h-[23px] w-[23px] shrink-0 items-center justify-center text-lg leading-none text-black/20"
+                          aria-hidden
+                        >
+                          —
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  )
+}
+
 function CustomQuoteSection() {
   return (
-    <section className="flex w-full justify-center bg-hero-yellow px-6 py-3">
-      <div className="flex w-full max-w-[1200px] justify-center py-px">
-        <div className="flex w-full max-w-[461px] flex-col items-center gap-2.5 px-4 text-center lg:max-w-[40%]">
-          <h2 className="font-archivo text-[56px] font-bold leading-[1.1] text-primary-black">
+    <section className="flex w-full justify-center bg-hero-yellow px-site py-cta-band">
+      <div className="flex w-full max-w-[1200px] justify-center">
+        <div className="flex w-full max-w-[461px] flex-col items-center gap-4 px-4 text-center lg:max-w-[40%]">
+          <h2 className="t-heading text-primary-black">
             Get a custom quote
           </h2>
-          <p className="max-w-[461px] font-inter text-base leading-[1.3] tracking-[-0.01em] text-primary-black">
+          <p className="t-body max-w-[461px] text-primary-black">
             Fill out the form and our sales team will be in touch shortly with a customised quote
           </p>
           <Link
@@ -305,21 +357,30 @@ function CustomQuoteSection() {
 export function PackagesPageContent() {
   return (
     <>
-      <section className="flex w-full justify-center bg-primary-white px-9 py-[135px]">
-        <div className="flex w-full max-w-[1200px] flex-col gap-[30px] px-9 py-6">
-          <div className="flex flex-col gap-4">
-            <p className="font-inter text-xs leading-[1.6] tracking-[-0.02em] text-primary-black">
+      <section className="flex w-full justify-center bg-primary-white px-site pb-16 pt-28 min-[810px]:py-[135px]">
+        <div className="flex w-full max-w-[1200px] flex-col gap-6 py-4 min-[810px]:gap-[30px] min-[810px]:py-6 min-[810px]:px-9">
+          <div className="flex flex-col gap-3 min-[810px]:gap-4">
+            <p className="t-eyebrow text-primary-black">
               Packages
             </p>
-            <h1 className="font-archivo text-[56px] font-bold leading-none text-primary-black">
+            <h1 className="t-display text-primary-black">
               Solutions tailored to your scale
             </h1>
-            <p className="mt-0 max-w-[631px] font-archivo text-[36px] leading-[1.3] text-primary-black">
+            <p className="t-subheading mt-0 max-w-[631px] text-primary-black">
               Flexible packages designed around how construction teams actually work
             </p>
           </div>
 
+          <PackagesMobilePlans />
           <PackagesComparisonMatrix />
+
+          <div className="flex justify-center pt-2 min-[810px]:pt-4">
+            <BuiltricButton
+              label="Book a demo"
+              href="/builtric-demo"
+              className="h-[42px] w-full max-w-[212px] justify-center"
+            />
+          </div>
         </div>
       </section>
 

@@ -5,13 +5,13 @@ import { CustomQuotePageForm } from '@/components/custom-quote-page-form'
 
 function PortalAccessSection() {
   return (
-    <section className="flex w-full justify-center bg-hero-yellow px-6 py-3">
-      <div className="flex w-full max-w-[1200px] justify-center py-px">
-        <div className="flex w-full max-w-[461px] flex-col items-center gap-2.5 px-4 text-center lg:max-w-[40%]">
-          <h2 className="font-archivo text-[56px] font-bold leading-[1.1] text-primary-black">
+    <section className="flex w-full justify-center bg-hero-yellow px-site py-cta-band">
+      <div className="flex w-full max-w-[1200px] justify-center">
+        <div className="flex w-full max-w-[461px] flex-col items-center gap-4 px-4 text-center lg:max-w-[40%]">
+          <h2 className="t-heading text-primary-black">
             Access your portal
           </h2>
-          <p className="max-w-[461px] font-inter text-base leading-[1.3] tracking-[-0.01em] text-primary-black">
+          <p className="t-body max-w-[461px] text-primary-black">
             Already a Builtric user? Log In instead.
           </p>
           <Link
@@ -29,18 +29,18 @@ function PortalAccessSection() {
 export function CustomQuotePageContent() {
   return (
     <>
-      <section className="flex w-full justify-center bg-primary-white px-9 py-[132px]">
-        <div className="flex w-full max-w-[1200px] flex-col gap-7 px-9 py-6 lg:flex-row lg:items-start">
+      <section className="flex w-full justify-center bg-primary-white px-site py-[132px]">
+        <div className="flex w-full max-w-[1200px] flex-col gap-7 py-6 min-[810px]:px-9 lg:flex-row lg:items-start">
           <div className="flex w-full max-w-[461px] flex-1 flex-col gap-2.5">
-            <p className="font-inter text-xs leading-[1.6] tracking-[-0.02em] text-primary-black">
+            <p className="t-eyebrow text-primary-black">
               Custom Package
             </p>
-            <h1 className="font-archivo text-[56px] font-bold leading-none text-primary-black">
+            <h1 className="t-display text-primary-black">
               Get a
               <br />
               customised quote
             </h1>
-            <p className="font-inter text-base leading-[1.3] tracking-[-0.01em] text-primary-black">
+            <p className="t-body text-primary-black">
               Fill out the form and our sales team will be in touch shortly with a customised quote,
               thoughtfully tailored to suit your business, objectives, and specific requirements.
             </p>

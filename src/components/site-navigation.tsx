@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { BuiltricButton } from '@/components/builtric-button'
 import { BuiltricLogo } from '@/components/builtric-logo'
@@ -15,15 +16,28 @@ const NAV_LINKS = [
   { label: 'Who We Serve', href: '/builtric-who-we-serve' },
   { label: 'About', href: '/builtric-about' },
   { label: 'Contact', href: '/builtric-contact' },
-  { label: 'News', href: '/builtric-news' },
 ] as const
 
-function NavLink({ href, label, onClick }: { href: string; label: string; onClick?: () => void }) {
+function NavLink({
+  href,
+  label,
+  onClick,
+  mobile = false,
+}: {
+  href: string
+  label: string
+  onClick?: () => void
+  mobile?: boolean
+}) {
   return (
     <Link
       href={href}
       onClick={onClick}
-      className="font-inter text-sm font-medium leading-8 tracking-[-0.01em] text-primary-black no-underline transition-colors hover:text-[#696969]"
+      className={
+        mobile
+          ? 'flex h-14 w-full items-center font-inter text-sm font-medium tracking-[-0.01em] text-primary-black no-underline transition-colors hover:text-[#696969]'
+          : 'font-inter text-sm font-medium leading-8 tracking-[-0.01em] text-primary-black no-underline transition-colors hover:text-[#696969]'
+      }
     >
       {label}
     </Link>
@@ -36,7 +50,7 @@ function LoginButton({ className = '' }: { className?: string }) {
       href="https://app.builtric.com"
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex h-[42px] min-w-[132px] items-center justify-center rounded-[4px] border-2 border-primary-black bg-transparent px-4 font-inter text-sm font-semibold leading-none text-primary-black no-underline transition-colors hover:bg-primary-black/5 ${className}`}
+      className={`inline-flex h-[42px] min-w-0 items-center justify-center rounded-[4px] border-2 border-primary-black bg-transparent px-4 font-inter text-sm font-semibold leading-none text-primary-black no-underline transition-colors hover:bg-primary-black/5 ${className}`}
     >
       Login
     </a>
@@ -67,6 +81,11 @@ function MenuIcon({ open }: { open: boolean }) {
 
 export function SiteNavigation() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [pathname])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -78,20 +97,23 @@ export function SiteNavigation() {
   const closeMenu = () => setMenuOpen(false)
 
   return (
-    <header className="w-full bg-transparent px-3 py-3">
+    <header className="px-site w-full bg-transparent py-4 min-[810px]:py-3">
       <nav
-        className="mx-auto flex w-full max-w-[1200px] flex-col rounded-[9px] bg-hero-yellow min-[810px]:h-14 min-[810px]:flex-row min-[810px]:items-center min-[810px]:gap-5 min-[810px]:px-2 min-[810px]:py-5"
+        className={`mx-auto flex w-full max-w-[1200px] flex-col overflow-hidden rounded-[9px] bg-hero-yellow px-4 py-3 transition-[max-height] duration-300 ease-out min-[810px]:h-14 min-[810px]:max-h-none min-[810px]:flex-row min-[810px]:items-center min-[810px]:gap-5 min-[810px]:px-2 min-[810px]:py-5 ${
+          menuOpen ? 'max-h-[calc(100dvh-2rem)]' : 'max-h-20 min-[810px]:overflow-visible'
+        }`}
         style={{ boxShadow: NAV_SHADOW }}
         aria-label="Main navigation"
       >
-        <div className="flex h-11 w-full items-center justify-between min-[810px]:h-auto min-[810px]:w-auto min-[810px]:shrink-0">
+        {/* Mobile / tablet top bar: logo + hamburger */}
+        <div className="flex h-14 w-full shrink-0 items-center justify-between min-[810px]:h-auto min-[810px]:w-auto">
           <Link href="/" className="flex shrink-0 items-center" onClick={closeMenu}>
             <BuiltricLogo priority />
           </Link>
 
           <button
             type="button"
-            className="flex items-center justify-center min-[810px]:hidden"
+            className="flex shrink-0 items-center justify-center min-[810px]:hidden"
             aria-expanded={menuOpen}
             aria-controls="site-mobile-menu"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -101,26 +123,42 @@ export function SiteNavigation() {
           </button>
         </div>
 
-        <div
-          id="site-mobile-menu"
-          className={`flex w-full flex-col gap-3 overflow-hidden min-[810px]:flex-1 min-[810px]:flex-row min-[810px]:items-center min-[810px]:justify-end min-[810px]:gap-9 ${
-            menuOpen ? 'max-h-[calc(100dvh-5rem)] pb-3 pt-3' : 'max-h-0 min-[810px]:max-h-none'
-          }`}
-        >
-          <div className="flex flex-col gap-3 min-[810px]:flex-1 min-[810px]:flex-row min-[810px]:flex-wrap min-[810px]:items-center min-[810px]:justify-end min-[810px]:gap-[26px]">
+        {/* Desktop links + CTAs */}
+        <div className="hidden min-[810px]:flex min-[810px]:flex-1 min-[810px]:flex-row min-[810px]:items-center min-[810px]:justify-end min-[810px]:gap-9">
+          <div className="flex flex-1 flex-row flex-wrap items-center justify-end gap-[26px]">
             {NAV_LINKS.map((link) => (
-              <NavLink key={link.href} {...link} onClick={closeMenu} />
+              <NavLink key={link.href} {...link} />
             ))}
           </div>
 
-          <div className="flex flex-col gap-1.5 min-[810px]:shrink-0 min-[810px]:flex-row min-[810px]:items-center min-[810px]:gap-1.5">
+          <div className="flex shrink-0 flex-row items-center gap-1.5">
+            <BuiltricButton label="Try Now" href="/builtric-demo" variant="try-black" />
+            <LoginButton className="w-[132px]" />
+          </div>
+        </div>
+
+        {/* Mobile menu panel */}
+        <div
+          id="site-mobile-menu"
+          className={`min-h-0 flex-col min-[810px]:hidden ${
+            menuOpen ? 'flex flex-1' : 'hidden'
+          }`}
+          aria-hidden={!menuOpen}
+        >
+          <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto overscroll-contain px-1 pb-4 pt-2">
+            {NAV_LINKS.map((link) => (
+              <NavLink key={link.href} {...link} mobile onClick={closeMenu} />
+            ))}
+          </div>
+
+          <div className="flex shrink-0 flex-row items-center gap-2 pb-2 pt-4">
             <BuiltricButton
               label="Try Now"
               href="/builtric-demo"
               variant="try-black"
-              className="w-full min-[810px]:w-[141px]"
+              className="!h-[42px] min-w-0 flex-1 !w-auto"
             />
-            <LoginButton className="w-full min-[810px]:w-[132px]" />
+            <LoginButton className="min-w-0 flex-1" />
           </div>
         </div>
       </nav>

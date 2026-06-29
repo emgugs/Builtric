@@ -8,14 +8,14 @@ import { FramerButton, FramerProcurementTile } from '@/components/framer-wrapper
 /** Full features grid — used on /builtric-features only */
 export function FeaturesShowcaseSection() {
   return (
-    <section className="flex w-full flex-col items-center gap-10 px-9 py-20">
+    <section className="flex w-full flex-col items-center gap-10 px-site py-20">
       <div className="flex w-full max-w-6xl flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
         <div className="flex max-w-lg flex-col gap-4">
-          <p className="text-xs">Product Features</p>
-          <h2 className="font-archivo text-4xl font-bold md:text-5xl">
+          <p className="t-eyebrow text-primary-black">Product Features</p>
+          <h2 className="t-heading text-primary-black">
             Built for the complexity of modern construction
           </h2>
-          <p className="text-base text-dark-grey">
+          <p className="t-body text-dark-grey">
             Builtric brings multiple stakeholders, data sources, and decision points into one
             unified intelligence platform
           </p>
@@ -39,7 +39,7 @@ export function FeaturesShowcaseSection() {
 
 export function DashboardSection() {
   return (
-    <section className="flex w-full justify-center px-4 py-10">
+    <section className="flex w-full justify-center px-site py-10">
       <DashboardFramerComponent.Responsive />
     </section>
   )
@@ -47,9 +47,9 @@ export function DashboardSection() {
 
 export function DemoRibbonSection() {
   return (
-    <section className="w-full bg-hero-yellow px-9 py-9">
+    <section className="w-full bg-hero-yellow px-site py-cta-band">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center gap-11 min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:gap-6">
-        <h3 className="w-full text-center font-archivo text-lg font-bold leading-none tracking-[-0.02em] text-primary-black min-[1200px]:flex-1 min-[1200px]:text-left min-[1200px]:text-2xl">
+        <h3 className="t-heading w-full text-center text-primary-black min-[1200px]:flex-1 min-[1200px]:text-left">
           Ready to bring intelligence to your construction project?
         </h3>
         <BuiltricButton

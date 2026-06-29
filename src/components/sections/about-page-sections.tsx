@@ -14,10 +14,10 @@ const STORY_BODY =
 function AboutHeroSection() {
   return (
     <>
-      <section className="flex w-full justify-center overflow-hidden px-9 pb-9 pt-[107px]">
+      <section className="flex w-full justify-center overflow-hidden px-site pb-9 pt-[107px]">
         <div className="flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-1 flex-col gap-2.5">
-            <h1 className="font-archivo text-[56px] font-bold leading-none text-primary-black">
+            <h1 className="t-display text-primary-black">
               The 360° construction intelligence platform
             </h1>
             <BuiltricButtonGroup className="py-3">
@@ -25,7 +25,7 @@ function AboutHeroSection() {
               <BuiltricButton label="Try Now" href="/builtric-demo" variant="cta" />
             </BuiltricButtonGroup>
           </div>
-          <p className="max-w-xl flex-1 font-archivo text-[36px] leading-[1.3] text-primary-black">
+          <p className="t-subheading max-w-xl flex-1 text-primary-black">
             Builtric helps you make data-driven decisions by unifying all project metrics into a
             single platform
           </p>
@@ -48,13 +48,13 @@ function AboutHeroSection() {
 
 function AboutMissionSection() {
   return (
-    <section className="flex w-full justify-center px-9 py-14">
+    <section className="flex w-full justify-center px-site py-14">
       <div className="flex w-full max-w-[1200px] flex-col items-start gap-14 lg:flex-row lg:gap-14">
         <div className="flex flex-1 flex-col gap-8 py-6">
-          <h2 className="font-archivo text-[56px] font-bold leading-[1.1] text-primary-black">
+          <h2 className="t-heading text-primary-black">
             Our mission is to transform how construction decisions are made
           </h2>
-          <p className="font-archivo text-[36px] leading-[1.3] text-primary-black">
+          <p className="t-subheading text-primary-black">
             By delivering real-time unified project data, eliminating uncertainty before it becomes
             costly, and empowering teams to build smarter.
           </p>
@@ -75,7 +75,7 @@ function AboutMissionSection() {
 
 function AboutStorySection() {
   return (
-    <section className="flex w-full justify-center px-9 py-14">
+    <section className="flex w-full justify-center px-site py-14">
       <div className="flex w-full max-w-[1200px] flex-col items-start gap-14 py-6 lg:flex-row lg:gap-14">
         <div className="relative h-[420px] w-full shrink-0 overflow-hidden rounded-xl lg:w-[420px]">
           <Image
@@ -87,10 +87,10 @@ function AboutStorySection() {
           />
         </div>
         <div className="flex flex-1 flex-col gap-8">
-          <h2 className="font-archivo text-[56px] font-bold leading-[1.1] text-primary-black">
+          <h2 className="t-heading text-primary-black">
             Story
           </h2>
-          <p className="font-inter text-base leading-[1.3] tracking-[-0.01em] text-primary-black">
+          <p className="t-body text-primary-black">
             {STORY_BODY}
           </p>
         </div>

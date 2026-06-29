@@ -12,7 +12,7 @@ function LegalEmailLink({ email }: { email: string }) {
 
 function LegalBody({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-col gap-2.5 font-inter text-base leading-[1.3] tracking-[-0.01em] text-primary-black [&_li]:list-disc [&_ul]:ml-6 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2.5">
+    <div className="t-body flex flex-col gap-2.5 text-primary-black [&_li]:list-disc [&_ul]:ml-6 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2.5">
       {children}
     </div>
   )
@@ -21,7 +21,7 @@ function LegalBody({ children }: { children: ReactNode }) {
 function LegalSection({ title, children }: { title: string; children: ReactNode }) {
   return (
     <div className="flex w-full flex-col gap-2.5">
-      <h2 className="font-archivo text-[56px] font-bold leading-[1.1] text-primary-black">{title}</h2>
+      <h2 className="t-heading text-primary-black">{title}</h2>
       {children}
     </div>
   )
@@ -217,7 +217,7 @@ function TermsSection() {
 
 export function LegalPageContent() {
   return (
-    <section className="flex w-full justify-center bg-white px-9 pb-[132px] pt-[108px]">
+    <section className="flex w-full justify-center bg-white px-site pb-[132px] pt-[108px]">
       <div className="flex w-full max-w-[1200px] flex-col gap-[111px] py-6">
         <PrivacyPolicySection />
         <TermsSection />
