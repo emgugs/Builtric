@@ -1,6 +1,8 @@
 'use client'
 
+import { DemoRibbonCard } from '@/components/sections/framer-sections'
 import { FramerTestimonial } from '@/components/framer-wrappers'
+import { ScrollReveal } from '@/components/scroll-reveal'
 
 const TESTIMONIALS_GRADIENT =
   'linear-gradient(181deg, rgb(245, 245, 245) 3%, rgb(255, 219, 52) 85%, rgb(245, 245, 245) 114%)'
@@ -26,27 +28,43 @@ const testimonials = [
   },
 ]
 
-export function TestimonialsSection() {
+export function TestimonialsSection({
+  includeDemoRibbon = false,
+}: {
+  includeDemoRibbon?: boolean
+}) {
   return (
-    <section
-      className="flex w-full flex-col items-center gap-11 overflow-hidden py-10"
+    <ScrollReveal
+      as="section"
+      className={`relative z-20 w-full overflow-hidden px-site py-12 md:py-16 ${
+        includeDemoRibbon ? 'pb-32 md:pb-44' : 'pb-12'
+      }`}
       style={{ background: TESTIMONIALS_GRADIENT }}
+      aria-label={includeDemoRibbon ? 'Testimonials and demo' : undefined}
     >
-      <h2 className="t-heading max-w-3xl px-site text-center text-primary-black">
-        See how companies build with Builtric
-      </h2>
-      <div className="w-full overflow-x-auto py-[22px]">
-        <div className="mx-auto flex w-max min-w-full justify-center gap-5 px-site min-[810px]:w-full min-[810px]:max-w-none min-[810px]:flex-wrap">
-          {testimonials.map((item) => (
-            <FramerTestimonial
-              key={item.name}
-              quote={item.quote}
-              name={item.name}
-              role={item.role}
-            />
-          ))}
+      <div className="site-container flex flex-col items-center gap-11 md:gap-14">
+        <h2 className="t-heading text-center text-primary-black">
+          See how companies build with Builtric
+        </h2>
+        <div className="w-full overflow-x-auto py-[22px] min-[810px]:overflow-visible">
+          <div className="flex w-max min-w-full justify-center gap-5 min-[810px]:w-full min-[810px]:flex-wrap">
+            {testimonials.map((item, index) => (
+              <ScrollReveal key={item.name} delay={index * 100}>
+                <FramerTestimonial
+                  quote={item.quote}
+                  name={item.name}
+                  role={item.role}
+                />
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
+        {includeDemoRibbon ? (
+          <ScrollReveal delay={200} className="w-full pt-4 md:pt-8">
+            <DemoRibbonCard className="translate-y-[10%]" />
+          </ScrollReveal>
+        ) : null}
       </div>
-    </section>
+    </ScrollReveal>
   )
 }

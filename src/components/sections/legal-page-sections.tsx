@@ -217,8 +217,8 @@ function TermsSection() {
 
 export function LegalPageContent() {
   return (
-    <section className="flex w-full justify-center bg-white px-site pb-[132px] pt-[108px]">
-      <div className="flex w-full max-w-[1200px] flex-col gap-[111px] py-6">
+    <section className="w-full bg-white px-site pb-[132px] pt-page-hero">
+      <div className="site-container flex flex-col gap-[111px] py-6">
         <PrivacyPolicySection />
         <TermsSection />
       </div>

@@ -7,9 +7,9 @@ const COMPANY_TYPES = [
   'Subcontractor',
   'Owner/Developer',
   'Government',
-  'Other',
   'Project Manager',
   'Become a Reseller',
+  'Other',
 ] as const
 
 const REQUEST_TYPES = [

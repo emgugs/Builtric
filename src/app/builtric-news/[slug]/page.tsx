@@ -16,7 +16,8 @@ export default function NewsArticlePage() {
 
   return (
     <SiteShell>
-      <article className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-site py-24">
+      <article className="w-full px-site pb-24 pt-page-hero">
+        <div className="site-container mx-auto flex max-w-3xl flex-col gap-6">
         <Link href="/builtric-news" className="t-small font-medium text-dark-grey hover:underline">
           ← Back to news
         </Link>
@@ -32,6 +33,7 @@ export default function NewsArticlePage() {
             reporting into one intelligence platform—so leaders can act early and stay in control from
             planning to handover.
           </p>
+        </div>
         </div>
       </article>
     </SiteShell>

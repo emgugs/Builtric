@@ -7,13 +7,17 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description, children }: PageHeroProps) {
   return (
-    <section className="flex w-full flex-col items-center bg-primary-white px-site py-24 text-center">
-      {eyebrow ? <p className="t-eyebrow mb-3 text-dark-grey">{eyebrow}</p> : null}
-      <h1 className="t-display max-w-4xl text-primary-black">{title}</h1>
-      {description ? (
-        <p className="t-body-lg mt-5 max-w-2xl text-dark-grey">{description}</p>
-      ) : null}
-      {children}
+    <section className="w-full bg-primary-white px-site pb-16 pt-page-hero text-center">
+      <div className="site-container flex flex-col items-center">
+        {eyebrow ? (
+          <p className="t-eyebrow t-eyebrow-pill-white mb-3 text-primary-black">{eyebrow}</p>
+        ) : null}
+        <h1 className="page-hero-title text-primary-black">{title}</h1>
+        {description ? (
+          <p className="page-hero-lead mx-auto mt-5 text-dark-grey">{description}</p>
+        ) : null}
+        {children}
+      </div>
     </section>
   )
 }

@@ -5,13 +5,13 @@ import { ContactPageForm } from '@/components/contact-page-form'
 
 function PortalAccessSection() {
   return (
-    <section className="flex w-full justify-center bg-hero-yellow px-site py-cta-band">
-      <div className="flex w-full max-w-[1200px] justify-center">
+    <section className="w-full bg-hero-yellow px-site py-cta-band">
+      <div className="site-container flex justify-center">
         <div className="flex w-full max-w-[461px] flex-col items-center gap-4 px-4 text-center lg:max-w-[40%]">
           <h2 className="t-heading text-primary-black">
             Access your portal.
           </h2>
-          <p className="t-body max-w-[461px] text-primary-black">
+          <p className="t-section-lead text-primary-black">
             Already a Builtric user? Log In instead.
           </p>
           <Link
@@ -29,16 +29,16 @@ function PortalAccessSection() {
 export function DemoPageContent() {
   return (
     <>
-      <section className="flex w-full justify-center bg-primary-white px-site py-[132px]">
-        <div className="flex w-full max-w-[1200px] flex-col gap-7 py-6 min-[810px]:px-9 lg:flex-row lg:items-start">
-          <div className="flex w-full max-w-[461px] flex-1 flex-col gap-2.5">
-            <p className="t-eyebrow text-primary-black">
+      <section className="w-full bg-primary-white px-site pb-20 pt-page-hero min-[810px]:pb-24">
+        <div className="site-container flex flex-col gap-7 py-6 lg:flex-row lg:items-start">
+          <div className="flex w-full max-w-[461px] flex-1 flex-col gap-2.5 lg:max-w-[40%]">
+            <p className="t-eyebrow t-eyebrow-pill-white w-fit text-primary-black">
               Try Builtric
             </p>
-            <h1 className="t-display text-primary-black">
+            <h1 className="page-hero-title text-primary-black">
               Book your personalised demo
             </h1>
-            <p className="t-body text-primary-black">
+            <p className="t-section-lead text-primary-black">
               Care about finishing your construction project on time and on budget? Fill out the
               form and our team will be in touch to book a personalised demo so you can try
               Builtric.

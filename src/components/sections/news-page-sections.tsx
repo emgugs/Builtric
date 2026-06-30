@@ -9,19 +9,19 @@ const HERO_IMAGE = 'https://framerusercontent.com/images/ic0LJJJs3EVPM2Ebxg074jv
 function NewsHeroSection() {
   return (
     <>
-      <section className="flex w-full justify-center overflow-hidden px-site pb-9 pt-[108px]">
-        <div className="flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          <div className="flex max-w-[83%] flex-1 flex-col gap-2.5 lg:max-w-none">
-            <h1 className="t-display max-w-[83%] text-primary-black">
+      <section className="w-full overflow-hidden px-site pb-9 pt-page-hero">
+        <div className="site-container flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex flex-1 flex-col gap-2.5">
+            <h1 className="page-hero-title text-primary-black">
               The latest from Builtric
             </h1>
             <div className="py-3">
               <BuiltricButton label="Try Now" href="/builtric-demo" variant="cta" />
             </div>
           </div>
-          <p className="t-subheading max-w-xl flex-1 text-primary-black">
+          <p className="page-hero-lead flex-1 text-primary-black">
             Explore product updates, company news, partnerships, and the latest from the Builtric
-            team
+            team.
           </p>
         </div>
       </section>

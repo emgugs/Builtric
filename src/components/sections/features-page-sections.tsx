@@ -33,21 +33,21 @@ const connectedDataCards = [
 function FeaturesHero() {
   return (
     <>
-      <section className="flex w-full justify-center overflow-hidden px-site pb-9 pt-[108px]">
-        <div className="flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+      <section className="w-full overflow-hidden px-site pb-9 pt-page-hero">
+        <div className="site-container flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-1 flex-col gap-2.5">
-            <h1 className="t-display text-primary-black">
-              One platform.
+            <h1 className="page-hero-title text-primary-black">
+              One platform
               <br />
-              Total project Intelligence
+              Total project intelligence
             </h1>
             <div className="py-3">
               <BuiltricButton label="Try Now" href="/builtric-demo" variant="cta" />
             </div>
           </div>
-          <p className="t-subheading max-w-xl flex-1 text-primary-black">
+          <p className="page-hero-lead flex-1 text-primary-black">
             Unify your data, streamline operations, and gain the insights to finish on time and on
-            budget
+            budget.
           </p>
         </div>
       </section>
@@ -61,33 +61,35 @@ function FeaturesHero() {
 
 function ConnectedDataSection() {
   return (
-    <section className="flex w-full flex-col items-center gap-11 bg-primary-white px-site py-[160px]">
-      <div className="max-w-3xl text-center">
-        <h2 className="t-heading text-primary-black">
-          Connected data. Better decisions
-        </h2>
-        <p className="t-body mx-auto mt-2.5 max-w-md text-primary-black">
-          Builtric connects every team and data source into one structured platform so your
-          decisions are powered by insight, not guesswork
-        </p>
-      </div>
-      <div className="grid w-full max-w-[1224px] grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-        {connectedDataCards.map((item) => (
-          <article
-            key={item.title}
-            className="flex h-[320px] flex-col items-center justify-center gap-3 rounded-[20px] bg-white p-3 text-center"
-          >
-            <Image src={item.image} alt="" width={100} height={100} />
-            <div className="flex flex-col gap-1.5 px-2">
-              <h3 className="t-title text-primary-black">
-                {item.title}
-              </h3>
-              <p className="t-body text-primary-black">
-                {item.description}
-              </p>
-            </div>
-          </article>
-        ))}
+    <section className="w-full bg-primary-white px-site py-[120px]">
+      <div className="site-container flex flex-col items-center gap-11">
+        <div className="max-w-3xl text-center">
+          <h2 className="t-heading text-primary-black">
+            Connected data. Better decisions
+          </h2>
+          <p className="t-section-lead mx-auto mt-2.5 max-w-md text-primary-black">
+            Builtric connects every team and data source into one structured platform so your
+            decisions are powered by insight, not guesswork.
+          </p>
+        </div>
+        <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          {connectedDataCards.map((item) => (
+            <article
+              key={item.title}
+              className="flex h-[320px] flex-col items-center justify-center gap-3 rounded-[20px] bg-white p-3 text-center"
+            >
+              <Image src={item.image} alt="" width={100} height={100} />
+              <div className="flex flex-col gap-1.5 px-2">
+                <h3 className="t-title text-primary-black">
+                  {item.title}
+                </h3>
+                <p className="t-body text-primary-black">
+                  {item.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -99,7 +101,7 @@ export function FeaturesPageContent() {
       <FeaturesHero />
       <ConnectedDataSection />
       <ProductFeaturesSection />
-      <DemoRibbonSection />
+      <DemoRibbonSection variant="yellow" />
     </>
   )
 }

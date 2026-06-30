@@ -10,7 +10,6 @@ const NAV_SHADOW =
   '0px 0.6021873017743928px 0.6021873017743928px -1.25px rgba(0, 0, 0, 0.18), 0px 2.288533303243457px 2.288533303243457px -2.5px rgba(0, 0, 0, 0.16), 0px 10px 10px -3.75px rgba(0, 0, 0, 0.06)'
 
 const NAV_LINKS = [
-  { label: 'Home', href: '/' },
   { label: 'Features', href: '/builtric-features' },
   { label: 'Packages', href: '/builtric-packages' },
   { label: 'Who We Serve', href: '/builtric-who-we-serve' },
@@ -97,9 +96,9 @@ export function SiteNavigation() {
   const closeMenu = () => setMenuOpen(false)
 
   return (
-    <header className="px-site w-full bg-transparent py-4 min-[810px]:py-3">
+    <header className="w-full bg-transparent px-site py-4 min-[810px]:py-3">
       <nav
-        className={`mx-auto flex w-full max-w-[1200px] flex-col overflow-hidden rounded-[9px] bg-hero-yellow px-4 py-3 transition-[max-height] duration-300 ease-out min-[810px]:h-14 min-[810px]:max-h-none min-[810px]:flex-row min-[810px]:items-center min-[810px]:gap-5 min-[810px]:px-2 min-[810px]:py-5 ${
+        className={`site-container flex flex-col overflow-hidden rounded-[9px] bg-hero-yellow px-4 py-3 transition-[max-height] duration-300 ease-out min-[810px]:h-14 min-[810px]:max-h-none min-[810px]:flex-row min-[810px]:items-center min-[810px]:gap-5 min-[810px]:px-6 min-[810px]:py-5 ${
           menuOpen ? 'max-h-[calc(100dvh-2rem)]' : 'max-h-20 min-[810px]:overflow-visible'
         }`}
         style={{ boxShadow: NAV_SHADOW }}

@@ -39,13 +39,13 @@ const plans: Plan[] = [
     name: 'Professional',
     description: 'Best for growing teams managing multiple active projects',
     highlighted: true,
+    enterprise: true,
   },
   {
     key: 'enterprise',
     name: 'Enterprise',
     description: 'Large portfolios requiring ERP integration and dedicated support',
     highlighted: true,
-    enterprise: true,
   },
 ]
 
@@ -189,7 +189,7 @@ function PlanCell({ included, highlighted }: { included: boolean; highlighted?: 
 function PackagesComparisonMatrix() {
   return (
     <div
-      className="hidden w-full max-w-[1224px] overflow-hidden rounded-[20px] bg-white min-[810px]:block"
+      className="hidden w-full overflow-hidden rounded-[20px] bg-white min-[810px]:block"
       style={{ boxShadow: CARD_SHADOW }}
     >
       <div className="overflow-x-auto">
@@ -242,7 +242,7 @@ function PackagesComparisonMatrix() {
                   <tr key={`${category.title}-${row.label}`}>
                     <th
                       scope="row"
-                      className="sticky left-0 z-10 border-b border-black/8 bg-white px-4 py-3 text-left font-normal sm:px-6 sm:py-3.5"
+                      className="sticky left-0 z-10 border-b border-black/8 bg-white py-3 pl-8 pr-4 text-left font-normal sm:py-3.5 sm:pl-10 sm:pr-6"
                     >
                       <p className="t-body text-primary-black">
                         {row.label}
@@ -304,7 +304,7 @@ function PackagesMobilePlans() {
                   {category.rows.map((row) => (
                     <li
                       key={`${plan.key}-${category.title}-${row.label}`}
-                      className="flex items-center justify-between gap-3 px-4 py-3"
+                      className="flex items-center justify-between gap-3 py-3 pl-8 pr-4"
                     >
                       <p className="t-body min-w-0 flex-1 text-primary-black">
                         {row.label}
@@ -333,14 +333,14 @@ function PackagesMobilePlans() {
 
 function CustomQuoteSection() {
   return (
-    <section className="flex w-full justify-center bg-hero-yellow px-site py-cta-band">
-      <div className="flex w-full max-w-[1200px] justify-center">
+    <section className="w-full bg-hero-yellow px-site py-cta-band">
+      <div className="site-container flex justify-center">
         <div className="flex w-full max-w-[461px] flex-col items-center gap-4 px-4 text-center lg:max-w-[40%]">
           <h2 className="t-heading text-primary-black">
             Get a custom quote
           </h2>
-          <p className="t-body max-w-[461px] text-primary-black">
-            Fill out the form and our sales team will be in touch shortly with a customised quote
+          <p className="t-section-lead text-primary-black">
+            Fill out the form and our sales team will be in touch shortly with a customised quote.
           </p>
           <Link
             href="/builtric-custom-quote"
@@ -357,20 +357,24 @@ function CustomQuoteSection() {
 export function PackagesPageContent() {
   return (
     <>
-      <section className="flex w-full justify-center bg-primary-white px-site pb-16 pt-28 min-[810px]:py-[135px]">
-        <div className="flex w-full max-w-[1200px] flex-col gap-6 py-4 min-[810px]:gap-[30px] min-[810px]:py-6 min-[810px]:px-9">
-          <div className="flex flex-col gap-3 min-[810px]:gap-4">
-            <p className="t-eyebrow text-primary-black">
+      <section className="w-full overflow-hidden bg-primary-white px-site pb-9 pt-page-hero">
+        <div className="site-container flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex flex-1 flex-col gap-2.5">
+            <p className="t-eyebrow t-eyebrow-pill-white w-fit text-primary-black">
               Packages
             </p>
-            <h1 className="t-display text-primary-black">
+            <h1 className="page-hero-title text-primary-black">
               Solutions tailored to your scale
             </h1>
-            <p className="t-subheading mt-0 max-w-[631px] text-primary-black">
-              Flexible packages designed around how construction teams actually work
-            </p>
           </div>
+          <p className="page-hero-lead flex-1 text-primary-black">
+            Flexible packages designed around how construction teams actually work.
+          </p>
+        </div>
+      </section>
 
+      <section className="w-full bg-primary-white px-site pb-16 min-[810px]:pb-20">
+        <div className="site-container flex flex-col gap-6 py-4 min-[810px]:gap-[30px] min-[810px]:py-6">
           <PackagesMobilePlans />
           <PackagesComparisonMatrix />
 

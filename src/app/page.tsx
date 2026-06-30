@@ -9,7 +9,6 @@ import {
   TechPartnersSection,
 } from '@/components/sections/home-sections'
 import { ProductFeaturesSection } from '@/components/sections/product-features-section'
-import { DemoRibbonSection } from '@/components/sections/framer-sections'
 import { TestimonialsSection } from '@/components/sections/testimonials-section'
 
 export default function HomePage() {
@@ -21,8 +20,7 @@ export default function HomePage() {
       <ProductFeaturesSection />
       <AboutPreviewSection />
       <EmpowersSection />
-      <TestimonialsSection />
-      <DemoRibbonSection />
+      <TestimonialsSection includeDemoRibbon />
     </SiteShell>
   )
 }

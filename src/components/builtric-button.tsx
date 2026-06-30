@@ -21,34 +21,72 @@ function NortheastArrow({ className }: { className?: string }) {
 }
 
 export type BuiltricButtonVariant = 'primary' | 'cta' | 'try-black'
+export type BuiltricButtonSize = 'default' | 'lg' | 'xl'
 
 type BuiltricButtonProps = {
   label: string
   href: string
   variant?: BuiltricButtonVariant
+  size?: BuiltricButtonSize
+  /** Use on dark backgrounds — stroke hover uses white instead of black */
+  onDark?: boolean
   className?: string
 }
+
+const SIZE_STYLES = {
+  default: {
+    height: 'h-[38px]',
+    text: 'text-[14px]',
+    ctaWidth: 'w-[138px]',
+    primaryPadding: 'px-4',
+    arrowWidth: 'w-[33px]',
+    arrowIcon: 'h-[21px] w-[21px]',
+    arrowOffset: '-top-[7px] bottom-[-7px]',
+  },
+  lg: {
+    height: 'h-[48px]',
+    text: 'text-base',
+    ctaWidth: 'w-[174px]',
+    primaryPadding: 'px-6',
+    arrowWidth: 'w-[42px]',
+    arrowIcon: 'h-[26px] w-[26px]',
+    arrowOffset: '-top-[9px] bottom-[-9px]',
+  },
+  xl: {
+    height: 'h-[54px] min-[1280px]:h-[60px]',
+    text: 'text-lg min-[1280px]:text-xl',
+    ctaWidth: 'w-[200px] min-[1280px]:w-[228px]',
+    primaryPadding: 'px-8 min-[1280px]:px-9',
+    arrowWidth: 'w-[46px] min-[1280px]:w-[52px]',
+    arrowIcon: 'h-[28px] w-[28px] min-[1280px]:h-[32px] min-[1280px]:w-[32px]',
+    arrowOffset: '-top-[10px] bottom-[-10px] min-[1280px]:-top-[11px] min-[1280px]:bottom-[-11px]',
+  },
+} as const
 
 /** Pixel-matched to Framer Button component (El0p7dvjB) Try Yellow variant */
 export function BuiltricButton({
   label,
   href,
   variant = 'primary',
+  size = 'default',
+  onDark = false,
   className = '',
 }: BuiltricButtonProps) {
+  const s = SIZE_STYLES[size]
+
   if (variant === 'try-black') {
     return (
       <Link
         href={href}
-        className={`group relative inline-flex h-[38px] w-[138px] items-center overflow-visible rounded-[4px] bg-primary-black px-[5px] font-inter text-[14px] font-semibold leading-none text-hero-yellow no-underline transition-opacity hover:opacity-95 ${className}`}
+        className={`group relative inline-flex ${s.height} ${s.ctaWidth} items-center overflow-visible rounded-[4px] bg-primary-black px-[5px] font-inter ${s.text} font-semibold leading-none text-hero-yellow no-underline transition-colors duration-300 hover:bg-hero-yellow hover:text-primary-black ${className}`}
         style={{ boxShadow: CTA_SHADOW }}
       >
         <span className="relative flex min-w-0 flex-1 items-center justify-start gap-[17px] overflow-visible pl-1.5">
           <span
-            className="absolute -right-px -top-[7px] bottom-[-7px] z-[1] flex w-[33px] items-center justify-center rounded-[3px] bg-hero-yellow"
+            className={`absolute -right-px ${s.arrowOffset} z-[1] flex ${s.arrowWidth} items-center justify-center rounded-[3px] bg-hero-yellow transition-colors duration-300 group-hover:bg-primary-black`}
             aria-hidden
           >
-            <NortheastArrow className="h-[21px] w-[21px] bg-primary-black transition-transform duration-300 group-hover:rotate-45" />
+            <NortheastArrow className={`${s.arrowIcon} bg-primary-black transition-all duration-300 group-hover:rotate-45 group-hover:bg-hero-yellow`} />
           </span>
           <span className="relative whitespace-nowrap">{label}</span>
         </span>
@@ -60,15 +98,15 @@ export function BuiltricButton({
     return (
       <Link
         href={href}
-        className={`group relative inline-flex h-[38px] w-[138px] items-center overflow-visible rounded-[4px] bg-hero-yellow px-[5px] font-inter text-[14px] font-semibold leading-none text-primary-black no-underline transition-opacity hover:opacity-95 ${className}`}
+        className={`group relative inline-flex ${s.height} ${s.ctaWidth} items-center overflow-visible rounded-[4px] bg-hero-yellow px-[5px] font-inter ${s.text} font-semibold leading-none text-primary-black no-underline transition-colors duration-300 hover:bg-primary-black hover:text-hero-yellow ${className}`}
         style={{ boxShadow: CTA_SHADOW }}
       >
         <span className="relative flex min-w-0 flex-1 items-center justify-start gap-[17px] overflow-visible pl-1.5">
           <span
-            className="absolute -right-px -top-[7px] bottom-[-7px] z-[1] flex w-[33px] items-center justify-center rounded-[3px] bg-primary-black"
+            className={`absolute -right-px ${s.arrowOffset} z-[1] flex ${s.arrowWidth} items-center justify-center rounded-[3px] bg-primary-black transition-colors duration-300 group-hover:bg-hero-yellow`}
             aria-hidden
           >
-            <NortheastArrow className="h-[21px] w-[21px] bg-hero-yellow transition-transform duration-300 group-hover:rotate-45" />
+            <NortheastArrow className={`${s.arrowIcon} bg-hero-yellow transition-all duration-300 group-hover:rotate-45 group-hover:bg-primary-black`} />
           </span>
           <span className="relative whitespace-nowrap">{label}</span>
         </span>
@@ -76,10 +114,14 @@ export function BuiltricButton({
     )
   }
 
+  const strokeHover = onDark
+    ? 'hover:border-primary-black hover:bg-transparent hover:text-primary-black'
+    : 'hover:border-primary-black hover:bg-transparent hover:text-primary-black'
+
   return (
     <Link
       href={href}
-      className={`inline-flex h-[38px] items-center justify-center whitespace-nowrap rounded-[4px] bg-primary-black px-4 font-inter text-[14px] font-semibold leading-none text-white no-underline transition-colors hover:bg-[rgb(54,62,71)] ${className}`}
+      className={`inline-flex ${s.height} items-center justify-center whitespace-nowrap rounded-[4px] border-2 border-transparent bg-primary-black ${s.primaryPadding} font-inter ${s.text} font-semibold leading-none text-white no-underline transition-all duration-300 ${strokeHover} ${className}`}
     >
       {label}
     </Link>

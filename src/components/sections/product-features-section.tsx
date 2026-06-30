@@ -8,6 +8,7 @@ import {
   ProcurementIcon,
   ProjectManagementIcon,
 } from '@/components/feature-timeline-icons'
+import { ScrollReveal } from '@/components/scroll-reveal'
 import type { ComponentType } from 'react'
 
 const features: {
@@ -19,35 +20,35 @@ const features: {
   {
     title: 'Procurement',
     description:
-      'Create, manage and track purchase orders, contracts and associated documents',
+      'Create, manage and track purchase orders, contracts and associated documents.',
     Icon: ProcurementIcon,
     iconClassName: 'h-[34px] w-[34px]',
   },
   {
     title: 'Finance',
     description:
-      'Track finances, generate certificates and manage cashflow in real time',
+      'Track finances, generate certificates and manage cashflow in real time.',
     Icon: FinanceIcon,
     iconClassName: 'h-[34px] w-[34px]',
   },
   {
     title: 'Project Management',
     description:
-      'Track work completion and submit inspection requests instantly',
+      'Track work completion and submit inspection requests instantly.',
     Icon: ProjectManagementIcon,
     iconClassName: 'h-[34px] w-[34px]',
   },
   {
     title: 'HSE Management',
     description:
-      'Manage health and enviorenmental safety. Conduct inspections, record findings and generate reports',
+      'Manage health and environmental safety. Conduct inspections, record findings and generate reports.',
     Icon: HseIcon,
     iconClassName: 'h-[34px] w-[31px]',
   },
   {
     title: 'Data Management',
     description:
-      'Store and organise project files and records with consistent version control and data integrity',
+      'Store and organise project files and records with consistent version control and data integrity.',
     Icon: DataIcon,
     iconClassName: 'h-[31px] w-[29px]',
   },
@@ -72,12 +73,11 @@ function FeatureTimeline() {
 
 export function ProductFeaturesSection() {
   return (
-    <section className="flex w-full justify-center px-site py-[84px]">
-      <div className="flex w-full max-w-[1200px] flex-col items-start justify-between gap-9 lg:flex-row lg:gap-[35px]">
-        {/* Copy — 40% on desktop */}
-        <div className="flex w-full flex-col gap-2.5 lg:w-[40%]">
+    <ScrollReveal as="section" className="w-full px-site py-[84px]">
+      <div className="site-container flex flex-col items-start justify-between gap-9 lg:flex-row lg:gap-[35px]">
+        <ScrollReveal delay={80} className="flex w-full flex-col gap-2.5 lg:w-[40%]">
           <div className="flex flex-col gap-3">
-            <p className="t-eyebrow text-primary-black">
+            <p className="t-eyebrow t-eyebrow-pill-yellow text-primary-black">
               Product Features
             </p>
             <h2 className="t-heading text-primary-black">
@@ -86,16 +86,15 @@ export function ProductFeaturesSection() {
           </div>
           <p className="t-body text-primary-black">
             Builtric brings multiple stakeholders, data sources, and decision points into one
-            unified intelligence platform
+            unified intelligence platform.
           </p>
           <BuiltricButtonGroup className="py-3">
             <BuiltricButton label="Product Features" href="/builtric-features" />
             <BuiltricButton label="Try Now" href="/builtric-demo" variant="cta" />
           </BuiltricButtonGroup>
-        </div>
+        </ScrollReveal>
 
-        {/* Features timeline + list */}
-        <div className="flex w-full shrink-0 flex-row items-start gap-2.5 lg:w-auto">
+        <ScrollReveal delay={160} className="flex w-full shrink-0 flex-row items-start gap-2.5 lg:w-auto">
           <FeatureTimeline />
           <div className="flex max-w-[329px] flex-col gap-11">
             {features.map((feature) => (
@@ -109,8 +108,8 @@ export function ProductFeaturesSection() {
               </article>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </div>
-    </section>
+    </ScrollReveal>
   )
 }

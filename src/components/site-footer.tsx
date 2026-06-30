@@ -46,7 +46,7 @@ function FooterColumn({
 
 export function SiteFooter() {
   return (
-    <footer className="relative w-full overflow-hidden bg-primary-black px-site py-12 text-primary-white md:min-h-[373px] md:py-9">
+    <footer className="relative z-10 -mt-8 w-full overflow-hidden bg-primary-black px-site pb-12 pt-28 text-primary-white md:-mt-10 md:min-h-[373px] md:pb-9 md:pt-32">
       <div
         className="pointer-events-none absolute left-[-120px] top-[-57px] h-[525px] w-[575px] opacity-[0.23] md:left-auto md:right-0 md:top-0 md:h-full md:w-[min(60%,574px)]"
         aria-hidden
@@ -64,7 +64,7 @@ export function SiteFooter() {
         </svg>
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-7 md:gap-[18px]">
+      <div className="site-container relative flex flex-col gap-7 md:gap-[18px]">
         <Link href="/" aria-label="Builtric home" className="w-fit">
           <BuiltricLogo variant="light" />
         </Link>
@@ -76,24 +76,23 @@ export function SiteFooter() {
 
         <div className="flex flex-col items-center gap-9 border-t border-white/10 pt-9 md:flex-row md:items-center md:justify-between md:gap-14 md:pt-10">
           <p className="text-center font-inter text-[10px] font-normal leading-[1.3] text-primary-white/80 md:text-left">
-            A product built by <strong className="font-bold text-primary-white">LMKR</strong>
+            A product built by{' '}
+            <a
+              href="https://lmkr.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-primary-white no-underline transition-colors hover:text-primary-white/90"
+            >
+              LMKR
+            </a>
           </p>
 
-          <div className="flex items-center gap-6 md:gap-10">
-            <Link
-              href="/builtric-legal"
-              className="font-inter text-[11px] font-light leading-[1.3] text-primary-white/90 no-underline transition-colors hover:text-primary-white md:text-[10px]"
-            >
-              Privacy Notice
-            </Link>
-            <span className="h-[13px] w-px bg-white/20" aria-hidden />
-            <Link
-              href="/builtric-legal"
-              className="font-inter text-[11px] font-light leading-[1.3] text-primary-white/90 no-underline transition-colors hover:text-primary-white md:text-[10px]"
-            >
-              Terms of Service
-            </Link>
-          </div>
+          <Link
+            href="/builtric-legal"
+            className="font-inter text-[11px] font-light leading-[1.3] text-primary-white/90 no-underline transition-colors hover:text-primary-white md:text-[10px]"
+          >
+            Privacy Policy and Terms of Service
+          </Link>
         </div>
       </div>
     </footer>

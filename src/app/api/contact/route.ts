@@ -15,9 +15,9 @@ const COMPANY_TYPES = [
   'Subcontractor',
   'Owner/Developer',
   'Government',
-  'Other',
   'Project Manager',
   'Become a Reseller',
+  'Other',
 ] as const
 
 const PACKAGE_TYPES = ['Standard', 'Professional', 'Enterprise'] as const

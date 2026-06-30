@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { BuiltricButton, BuiltricButtonGroup } from '@/components/builtric-button'
-import { DemoRibbonSection } from '@/components/sections/framer-sections'
 import { TestimonialsSection } from '@/components/sections/testimonials-section'
 
 const HERO_IMAGE = 'https://framerusercontent.com/images/cpyIsgI7j4HkQtlvijSFu4xQSgo.png'
@@ -19,7 +18,7 @@ type RoleSection = {
 const developersSection: RoleSection = {
   title: 'Developers',
   subtitle:
-    'Builtric gives developers the real-time insight needed to manage capital, resources, and risk across multiple construction projects, without the guesswork',
+    'Builtric gives developers the real-time insight needed to manage capital, resources, and risk across multiple construction projects, without the guesswork.',
   image: 'https://framerusercontent.com/images/Ii3npJ5eaLfC6Pr8x9R2KG5TPX4.jpg',
   imagePosition: 'left',
   background: 'white',
@@ -50,30 +49,30 @@ const developersSection: RoleSection = {
 const contractorsSection: RoleSection = {
   title: 'Contractors',
   subtitle:
-    'Builtric offers tools that track work and empower teams to coordinate in real time, reduce waste, and deliver set outcomes',
+    'Builtric offers tools that track work and empower teams to coordinate in real time, reduce waste, and deliver set outcomes.',
   image: 'https://framerusercontent.com/images/NTTPoIQfoTbJqs0LM3XZw4aG8.jpg',
   imagePosition: 'right',
   background: 'muted',
   benefits: [
     {
-      title: 'Operational control:',
+      title: 'Operational control',
       description:
-        ' Connect site and office teams through a single source of truth, eliminating delays caused by disconnected processes.',
+        'Connect site and office teams through a single source of truth, eliminating delays caused by disconnected processes.',
     },
     {
-      title: 'Productivity you can measure:',
+      title: 'Productivity you can measure',
       description:
-        ' Boost labor and equipment efficiency with insights into progress, productivity bottlenecks, and schedule risks.',
+        'Boost labor and equipment efficiency with insights into progress, productivity bottlenecks, and schedule risks.',
     },
     {
-      title: 'Cost and risk management:',
+      title: 'Cost and risk management',
       description:
-        ' Understand real cost drivers, manage change orders, and protect profit margins with live financial tracking and variation control.',
+        'Understand real cost drivers, manage change orders, and protect profit margins with live financial tracking and variation control.',
     },
     {
-      title: 'Scalable workflows:',
+      title: 'Scalable workflows',
       description:
-        ' Standardize processes across projects, from tender and execution to handover, so teams can operate consistently at scale.',
+        'Standardize processes across projects, from tender and execution to handover, so teams can operate consistently at scale.',
     },
   ],
 }
@@ -81,30 +80,30 @@ const contractorsSection: RoleSection = {
 const projectManagersSection: RoleSection = {
   title: 'Project Managers',
   subtitle:
-    'Builtric gives owners the real-time insight needed to manage capital, resources, and risk across multiple construction projects, without the guesswork',
+    'Builtric gives owners the real-time insight needed to manage capital, resources, and risk across multiple construction projects, without the guesswork.',
   image: 'https://framerusercontent.com/images/U2K6Lg4SXEQs90FjbyeS1gYePSs.jpg',
   imagePosition: 'left',
   background: 'white',
   benefits: [
     {
-      title: 'Unified project view:',
+      title: 'Unified project view',
       description:
-        ' Real-time dashboards that show progress, task status, issues, and risks, eliminating guesswork from execution.',
+        'Real-time dashboards that show progress, task status, issues, and risks, eliminating guesswork from execution.',
     },
     {
-      title: 'Structured collaboration:',
+      title: 'Structured collaboration',
       description:
-        ' Keep teams aligned with shared documentation, approvals, RFIs, and meeting records, all in one place.',
+        'Keep teams aligned with shared documentation, approvals, RFIs, and meeting records, all in one place.',
     },
     {
-      title: 'Actionable alerts:',
+      title: 'Actionable alerts',
       description:
-        ' Identify schedule slippage, budget deviations, and quality issues early so corrective actions can be taken before they escalate.',
+        'Identify schedule slippage, budget deviations, and quality issues early so corrective actions can be taken before they escalate.',
     },
     {
-      title: 'Execution excellence:',
+      title: 'Execution excellence',
       description:
-        ' Standardise approaches across phases, enforce accountability, and coordinate cross-functional teams with clarity',
+        'Standardise approaches across phases, enforce accountability, and coordinate cross-functional teams with clarity.',
     },
   ],
 }
@@ -135,10 +134,10 @@ const coreBenefits = [
 function WhoWeServeHero() {
   return (
     <>
-      <section className="flex w-full justify-center overflow-hidden px-site pb-9 pt-[108px]">
-        <div className="flex w-full max-w-[1600px] flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+      <section className="w-full overflow-hidden px-site pb-9 pt-page-hero">
+        <div className="site-container flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-1 flex-col gap-2.5">
-            <h1 className="t-display max-w-[94%] text-primary-black">
+            <h1 className="page-hero-title text-primary-black">
               The right tools for every role
             </h1>
             <BuiltricButtonGroup className="py-3">
@@ -146,9 +145,9 @@ function WhoWeServeHero() {
               <BuiltricButton label="Try Now" href="/builtric-demo" variant="cta" />
             </BuiltricButtonGroup>
           </div>
-          <p className="t-subheading max-w-xl flex-1 text-primary-black">
+          <p className="page-hero-lead flex-1 text-primary-black">
             Builtric delivers powerful construction management tools for every key player, keeping
-            the entire project aligned around a single, reliable source of truth
+            the entire project aligned around a single, reliable source of truth.
           </p>
         </div>
       </section>
@@ -182,7 +181,7 @@ function RoleSectionBlock({ section, id }: { section: RoleSection; id?: string }
         <h2 className="t-heading text-primary-black">
           {section.title}
         </h2>
-        <p className="t-subheading text-primary-black">{section.subtitle}</p>
+        <p className="t-section-lead text-primary-black">{section.subtitle}</p>
       </div>
       <div className="flex flex-col gap-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -202,11 +201,11 @@ function RoleSectionBlock({ section, id }: { section: RoleSection; id?: string }
   return (
     <section
       id={id}
-      className={`flex w-full justify-center px-site py-14 ${
+      className={`w-full px-site py-14 ${
         section.background === 'muted' ? 'bg-primary-white' : 'bg-white'
       }`}
     >
-      <div className="flex w-full max-w-[1200px] flex-col items-start gap-7 lg:flex-row">
+      <div className="site-container flex flex-col items-start gap-7 lg:flex-row">
         {section.imagePosition === 'left' ? (
           <>
             {imageEl}
@@ -225,16 +224,17 @@ function RoleSectionBlock({ section, id }: { section: RoleSection; id?: string }
 
 function CoreBenefitsSection() {
   return (
-    <section className="flex w-full flex-col items-center gap-11 overflow-hidden px-site py-[78px]">
-      <div className="max-w-3xl text-center">
-        <h2 className="t-heading text-primary-black">
-          Core benefits for every role
-        </h2>
-        <p className="t-body mx-auto mt-2.5 max-w-md text-primary-black">
-          Builtric eliminates silos and connects every stakeholder to a single source of truth
-        </p>
-      </div>
-      <div className="grid w-full max-w-[1224px] grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+    <section className="w-full overflow-hidden px-site py-[78px]">
+      <div className="site-container flex flex-col items-center gap-11">
+        <div className="max-w-3xl text-center">
+          <h2 className="t-heading text-primary-black">
+            Core benefits for every role
+          </h2>
+          <p className="t-section-lead mx-auto mt-2.5 max-w-md text-primary-black">
+            Builtric eliminates silos and connects every stakeholder to a single source of truth.
+          </p>
+        </div>
+        <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {coreBenefits.map((item) => (
           <article
             key={item.title}
@@ -251,6 +251,7 @@ function CoreBenefitsSection() {
             </div>
           </article>
         ))}
+        </div>
       </div>
     </section>
   )
@@ -264,8 +265,7 @@ export function WhoWeServePageContent() {
       <RoleSectionBlock id="contractors" section={contractorsSection} />
       <RoleSectionBlock id="developers" section={developersSection} />
       <CoreBenefitsSection />
-      <TestimonialsSection />
-      <DemoRibbonSection />
+      <TestimonialsSection includeDemoRibbon />
     </>
   )
 }
