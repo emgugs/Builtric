@@ -6,16 +6,14 @@ export function ContactPageContent() {
   return (
     <>
       <section className="w-full overflow-hidden bg-primary-white px-site pb-9 pt-page-hero">
-        <div className="site-container flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-          <div className="flex flex-1 flex-col gap-2.5">
-            <p className="t-eyebrow t-eyebrow-pill-white w-fit text-primary-black">
-              Contact Us
-            </p>
-            <h1 className="page-hero-title text-primary-black">
-              Connect with our technology experts!
-            </h1>
-          </div>
-          <p className="page-hero-lead flex-1 text-primary-black">
+        <div className="site-container flex flex-col gap-2.5">
+          <p className="t-eyebrow t-eyebrow-pill-white w-fit text-primary-black">
+            Contact Us
+          </p>
+          <h1 className="page-hero-title text-primary-black">
+            Connect with our technology experts!
+          </h1>
+          <p className="page-hero-lead text-primary-black">
             Whether you&apos;re onboarding your first project or managing a complex portfolio, the
             Builtric Support team is ready to assist you.
           </p>

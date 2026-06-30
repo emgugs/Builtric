@@ -8,8 +8,11 @@ const HERO_IMAGE = 'https://framerusercontent.com/images/hcvlUsMeEgiTnJSXFYwkBGl
 const MISSION_IMAGE = 'https://framerusercontent.com/images/RZ1pwYaMGB7FLe8WB8ztHwBMlc.jpg'
 const STORY_IMAGE = 'https://framerusercontent.com/images/4mpTeSy0hiW3nPbHKHgXssIjsc.jpg'
 
-const STORY_BODY =
-  'Builtric was founded on a simple, powerful idea: construction projects fail not from a lack of effort, but from a lack of visibility. We saw leaders making billion-dollar decisions with fragmented data and delayed reports, often forced to rely on intuition rather than real-time insight. This disconnect creates inefficiencies, cost overruns, and missed opportunities that ripple across entire projects. Born from a deep understanding of regional complexities and global best practices, Builtric is designed to be the single source of truth the industry can rely on. It brings clarity to complexity by unifying data, streamlining communication, and enabling faster, more informed decision-making at every level. By bridging gaps between teams, stakeholders, and systems, Builtric empowers organizations to move with confidence and precision. Ultimately, it transforms how projects are managed—shifting from reactive problem-solving to proactive, data-driven execution.'
+const STORY_PARAGRAPHS = [
+  'Construction projects do not fail because people stop working hard. They fail when leaders cannot see what is happening soon enough to act. Across large-scale projects, critical decisions are often made with fragmented data, delayed reports, and disconnected communication. The result is cost overrun, slower execution, missed deadlines, and risk that could have been avoided.',
+  'Builtric was created to change that. The platform gives teams one clear view of project performance by connecting data, communication, reporting, and decision-making in a single source of truth. Issues become easier to spot, teams stay better aligned, and leaders can make faster decisions with greater confidence.',
+  'Built by LMKR, a premier digital transformation partner with over 30 years of experience across technology, energy, and infrastructure, Builtric brings proven cross-industry expertise into construction project management. The result is a smarter way to plan, track, and deliver projects, with greater transparency, efficiency, and control from start to finish.',
+] as const
 
 function AboutHeroSection() {
   return (
@@ -73,6 +76,37 @@ function AboutMissionSection() {
   )
 }
 
+function AboutStatsStrip() {
+  return (
+    <section className="w-full bg-primary-black px-site py-12 min-[810px]:py-16">
+      <div className="site-container">
+        <div className="flex flex-col gap-10 min-[810px]:flex-row min-[810px]:items-stretch min-[810px]:gap-14">
+          <div className="flex flex-1 flex-col gap-3">
+            <p className="font-archivo text-[clamp(2.5rem,2rem+2vw,3.5rem)] font-bold leading-none tracking-[-0.02em] text-hero-yellow">
+              971
+            </p>
+            <p className="t-body text-primary-white/90">
+              contracts managed across Local Development Program and PRMSC initiatives
+            </p>
+          </div>
+
+          <div
+            className="hidden w-px shrink-0 self-stretch bg-white/15 min-[810px]:block"
+            aria-hidden
+          />
+
+          <div className="flex flex-1 flex-col gap-3">
+            <p className="font-archivo text-[clamp(2rem,1.5rem+1.5vw,3rem)] font-bold leading-none tracking-[-0.02em] text-hero-yellow">
+              PKR 147 billion
+            </p>
+            <p className="t-body text-primary-white/90">in project value handled digitally</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function AboutStorySection() {
   return (
     <section className="w-full px-site py-14">
@@ -90,9 +124,13 @@ function AboutStorySection() {
           <h2 className="t-heading text-primary-black">
             Story
           </h2>
-          <p className="t-body text-primary-black">
-            {STORY_BODY}
-          </p>
+          <div className="flex flex-col gap-5">
+            {STORY_PARAGRAPHS.map((paragraph) => (
+              <p key={paragraph.slice(0, 32)} className="t-body text-primary-black">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -105,7 +143,8 @@ export function AboutPageContent() {
       <AboutHeroSection />
       <AboutMissionSection />
       <AboutStorySection />
-      <DemoRibbonSection />
+      <AboutStatsStrip />
+      <DemoRibbonSection variant="yellow" />
     </>
   )
 }

@@ -49,6 +49,47 @@ export function DashboardSection() {
   )
 }
 
+const CTA_CARD_SHADOW =
+  '0px 0.6021873017743928px 0.6021873017743928px -1.25px rgba(0, 0, 0, 0.18), 0px 2.288533303243457px 2.288533303243457px -2.5px rgba(0, 0, 0, 0.16), 0px 10px 10px -3.75px rgba(0, 0, 0, 0.06)'
+
+export function CtaRibbonCard({
+  title,
+  description,
+  buttonLabel,
+  buttonHref,
+  variant = 'white',
+  className = '',
+}: {
+  title: string
+  description?: string
+  buttonLabel: string
+  buttonHref: string
+  variant?: 'white' | 'yellow'
+  className?: string
+}) {
+  const bgClass = variant === 'yellow' ? 'bg-hero-yellow' : 'bg-white'
+
+  return (
+    <div
+      className={`flex flex-col items-center gap-6 rounded-[20px] ${bgClass} px-6 py-8 min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-between min-[1200px]:gap-8 min-[1200px]:px-10 min-[1200px]:py-9 ${className}`}
+      style={{ boxShadow: CTA_CARD_SHADOW }}
+    >
+      <div className="flex flex-col gap-2 text-center min-[1200px]:flex-1 min-[1200px]:text-left">
+        <h3 className="t-heading text-primary-black">{title}</h3>
+        {description ? (
+          <p className="t-section-lead text-primary-black">{description}</p>
+        ) : null}
+      </div>
+      <BuiltricButton
+        label={buttonLabel}
+        href={buttonHref}
+        variant="try-black"
+        className="h-[42px] w-full max-w-[240px] shrink-0 justify-center"
+      />
+    </div>
+  )
+}
+
 export function DemoRibbonCard({
   className = '',
   variant = 'white',
@@ -56,26 +97,14 @@ export function DemoRibbonCard({
   className?: string
   variant?: 'white' | 'yellow'
 }) {
-  const bgClass = variant === 'yellow' ? 'bg-hero-yellow' : 'bg-white'
-
   return (
-    <div
-      className={`flex flex-col items-center gap-6 rounded-[20px] ${bgClass} px-6 py-8 min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-between min-[1200px]:gap-8 min-[1200px]:px-10 min-[1200px]:py-9 ${className}`}
-      style={{
-        boxShadow:
-          '0px 0.6021873017743928px 0.6021873017743928px -1.25px rgba(0, 0, 0, 0.18), 0px 2.288533303243457px 2.288533303243457px -2.5px rgba(0, 0, 0, 0.16), 0px 10px 10px -3.75px rgba(0, 0, 0, 0.06)',
-      }}
-    >
-      <h3 className="t-heading text-center text-primary-black min-[1200px]:flex-1 min-[1200px]:text-left">
-        Ready to bring intelligence to your construction project?
-      </h3>
-      <BuiltricButton
-        label="Try Now"
-        href="/builtric-demo"
-        variant="try-black"
-        className="h-[42px] w-full max-w-[212px] shrink-0 justify-center"
-      />
-    </div>
+    <CtaRibbonCard
+      className={className}
+      variant={variant}
+      title="Ready to bring intelligence to your construction project?"
+      buttonLabel="Try Now"
+      buttonHref="/builtric-demo"
+    />
   )
 }
 

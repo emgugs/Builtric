@@ -15,37 +15,6 @@ type RoleSection = {
   benefits: { title: string; description: string }[]
 }
 
-const developersSection: RoleSection = {
-  title: 'Developers',
-  subtitle:
-    'Builtric gives developers the real-time insight needed to manage capital, resources, and risk across multiple construction projects, without the guesswork.',
-  image: 'https://framerusercontent.com/images/Ii3npJ5eaLfC6Pr8x9R2KG5TPX4.jpg',
-  imagePosition: 'left',
-  background: 'white',
-  benefits: [
-    {
-      title: 'Portfolio-wide visibility',
-      description:
-        'See financial health, schedule performance, and risk indicators across all active builds in one unified view.',
-    },
-    {
-      title: 'Strategic decision support',
-      description:
-        'Data-driven dashboards that help you assess progress, forecast cost impact, and govern timelines more effectively.',
-    },
-    {
-      title: 'Standardized delivery',
-      description:
-        'Drive repeatable excellence by aligning teams on common data, workflows, and performance indicators.',
-    },
-    {
-      title: 'Real-time financial insight',
-      description:
-        'Move beyond retrospective reporting and gain forward-looking visibility into costs, variations, and cash flow.',
-    },
-  ],
-}
-
 const contractorsSection: RoleSection = {
   title: 'Contractors',
   subtitle:
@@ -80,7 +49,7 @@ const contractorsSection: RoleSection = {
 const projectManagersSection: RoleSection = {
   title: 'Project Managers',
   subtitle:
-    'Builtric gives owners the real-time insight needed to manage capital, resources, and risk across multiple construction projects, without the guesswork.',
+    'Builtric gives project managers real-time dashboard monitoring of finances and schedule, with final approval authority on variance orders, budget deviations, and payable amounts.',
   image: 'https://framerusercontent.com/images/U2K6Lg4SXEQs90FjbyeS1gYePSs.jpg',
   imagePosition: 'left',
   background: 'white',
@@ -104,6 +73,68 @@ const projectManagersSection: RoleSection = {
       title: 'Execution excellence',
       description:
         'Standardise approaches across phases, enforce accountability, and coordinate cross-functional teams with clarity.',
+    },
+  ],
+}
+
+const developersSection: RoleSection = {
+  title: 'Developers',
+  subtitle:
+    'Builtric gives developers portfolio-wide visibility into financial health, schedule performance, and risk indicators across all active builds, supporting forward-looking decisions instead of retrospective reporting.',
+  image: 'https://framerusercontent.com/images/Ii3npJ5eaLfC6Pr8x9R2KG5TPX4.jpg',
+  imagePosition: 'left',
+  background: 'white',
+  benefits: [
+    {
+      title: 'Portfolio-wide visibility',
+      description:
+        'See financial health, schedule performance, and risk indicators across all active builds in one unified view.',
+    },
+    {
+      title: 'Strategic decision support',
+      description:
+        'Data-driven dashboards that help you assess progress, forecast cost impact, and govern timelines more effectively.',
+    },
+    {
+      title: 'Standardized delivery',
+      description:
+        'Drive repeatable excellence by aligning teams on common data, workflows, and performance indicators.',
+    },
+    {
+      title: 'Real-time financial insight',
+      description:
+        'Move beyond retrospective reporting and gain forward-looking visibility into costs, variations, and cash flow.',
+    },
+  ],
+}
+
+const consultantsSection: RoleSection = {
+  title: 'Consultants',
+  subtitle:
+    'Validate on-site work quality, verify compliance, and review and approve Interim Payment Certificates (IPCs) and Secure Advances, all within a transparent, auditable workflow.',
+  image: 'https://framerusercontent.com/images/ic0LJJJs3EVPM2Ebxg074jv3vc.jpg',
+  imagePosition: 'right',
+  background: 'muted',
+  benefits: [
+    {
+      title: 'On-site quality validation',
+      description:
+        'Inspect and validate work against specifications and standards with structured, evidence-backed quality checks.',
+    },
+    {
+      title: 'Compliance verification',
+      description:
+        'Verify regulatory and contractual compliance at every stage with documented records ready for audit.',
+    },
+    {
+      title: 'IPC review and approval',
+      description:
+        'Review and approve Interim Payment Certificates with full visibility into completed work and valuations.',
+    },
+    {
+      title: 'Secure Advances governance',
+      description:
+        'Manage Secure Advances through transparent approval chains that keep every decision traceable.',
     },
   ],
 }
@@ -161,10 +192,10 @@ function WhoWeServeHero() {
 
 function BenefitText({ title, description }: { title: string; description: string }) {
   return (
-    <p className="t-body text-primary-black">
-      <span className="font-bold">{title}</span>
-      {description}
-    </p>
+    <div className="flex flex-col gap-1">
+      <p className="t-body font-bold text-primary-black">{title}</p>
+      <p className="t-body text-primary-black">{description}</p>
+    </div>
   )
 }
 
@@ -264,6 +295,7 @@ export function WhoWeServePageContent() {
       <RoleSectionBlock id="project-managers" section={projectManagersSection} />
       <RoleSectionBlock id="contractors" section={contractorsSection} />
       <RoleSectionBlock id="developers" section={developersSection} />
+      <RoleSectionBlock id="consultants" section={consultantsSection} />
       <CoreBenefitsSection />
       <TestimonialsSection includeDemoRibbon />
     </>

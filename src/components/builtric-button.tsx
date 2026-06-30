@@ -78,7 +78,7 @@ export function BuiltricButton({
     return (
       <Link
         href={href}
-        className={`group relative inline-flex ${s.height} ${s.ctaWidth} items-center overflow-visible rounded-[4px] bg-primary-black px-[5px] font-inter ${s.text} font-semibold leading-none text-hero-yellow no-underline transition-colors duration-300 hover:bg-hero-yellow hover:text-primary-black ${className}`}
+        className={`group relative inline-flex ${s.height} ${s.ctaWidth} items-center overflow-visible rounded-[4px] border-2 border-transparent bg-primary-black px-[5px] font-inter ${s.text} font-semibold leading-none text-hero-yellow no-underline transition-all duration-300 hover:border-primary-black hover:bg-hero-yellow hover:text-primary-black ${className}`}
         style={{ boxShadow: CTA_SHADOW }}
       >
         <span className="relative flex min-w-0 flex-1 items-center justify-start gap-[17px] overflow-visible pl-1.5">

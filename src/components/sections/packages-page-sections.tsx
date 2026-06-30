@@ -1,8 +1,8 @@
 'use client'
 
 import { Fragment } from 'react'
-import Link from 'next/link'
 import { BuiltricButton } from '@/components/builtric-button'
+import { CtaRibbonCard } from '@/components/sections/framer-sections'
 
 const CARD_SHADOW =
   '0px 0.6021873017743928px 1.5656869846134214px -0.8333333333333333px rgba(0, 0, 0, 0.12), 0px 2.288533303243457px 5.950186588432988px -1.6666666666666665px rgba(0, 0, 0, 0.12), 0px 10px 26px -2.5px rgba(0, 0, 0, 0.12)'
@@ -333,22 +333,18 @@ function PackagesMobilePlans() {
 
 function CustomQuoteSection() {
   return (
-    <section className="w-full bg-hero-yellow px-site py-cta-band">
-      <div className="site-container flex justify-center">
-        <div className="flex w-full max-w-[461px] flex-col items-center gap-4 px-4 text-center lg:max-w-[40%]">
-          <h2 className="t-heading text-primary-black">
-            Get a custom quote
-          </h2>
-          <p className="t-section-lead text-primary-black">
-            Fill out the form and our sales team will be in touch shortly with a customised quote.
-          </p>
-          <Link
-            href="/builtric-custom-quote"
-            className="inline-flex h-9 w-[148px] items-center justify-center rounded-[4px] bg-primary-black font-inter text-sm font-semibold text-white no-underline transition-colors hover:bg-[rgb(54,62,71)]"
-          >
-            Fill form
-          </Link>
-        </div>
+    <section
+      className="relative z-20 w-full bg-primary-white px-site pb-16 pt-8 min-[810px]:pb-20"
+      aria-label="Request a custom quote"
+    >
+      <div className="site-container">
+        <CtaRibbonCard
+          variant="yellow"
+          title="Get your custom quote"
+          description="Share your requirements and our sales team will get back to you with a custom quote."
+          buttonLabel="Request a quote"
+          buttonHref="/builtric-custom-quote"
+        />
       </div>
     </section>
   )
