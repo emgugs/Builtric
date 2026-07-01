@@ -210,7 +210,7 @@ function RoleSectionBlock({ section, id }: { section: RoleSection; id?: string }
     <div className="flex flex-1 flex-col gap-6">
       <div className="flex flex-col gap-2.5">
         <h2 className="t-heading text-primary-black">
-          {section.title}
+          For {section.title}
         </h2>
         <p className="t-section-lead text-primary-black">{section.subtitle}</p>
       </div>

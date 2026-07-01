@@ -11,11 +11,11 @@ export function ContactPageContent() {
             Contact Us
           </p>
           <h1 className="page-hero-title text-primary-black">
-            Connect with our technology experts!
+            Talk to the Builtric team
           </h1>
           <p className="page-hero-lead text-primary-black">
-            Whether you&apos;re onboarding your first project or managing a complex portfolio, the
-            Builtric Support team is ready to assist you.
+            Have a question about Builtric, pricing, implementation, or partnerships? Share your
+            details and our team will get back to you.
           </p>
         </div>
 

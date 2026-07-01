@@ -37,9 +37,9 @@ function FeaturesHero() {
         <div className="site-container flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-1 flex-col gap-2.5">
             <h1 className="page-hero-title text-primary-black">
-              One platform
+              One platform.
               <br />
-              Total project intelligence
+              Total project intelligence.
             </h1>
             <div className="py-3">
               <BuiltricButton label="Try Now" href="/builtric-demo" variant="cta" />
@@ -65,7 +65,7 @@ function ConnectedDataSection() {
       <div className="site-container flex flex-col items-center gap-11">
         <div className="max-w-3xl text-center">
           <h2 className="t-heading text-primary-black">
-            Connected data. Better decisions
+            Connected data. Better decisions.
           </h2>
           <p className="t-section-lead mx-auto mt-2.5 max-w-md text-primary-black">
             Builtric connects every team and data source into one structured platform so your

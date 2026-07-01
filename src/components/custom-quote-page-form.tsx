@@ -1,9 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-
-const fieldClassName =
-  'h-10 w-full rounded-[10px] border border-[rgba(136,136,136,0.1)] bg-white px-3 font-inter text-sm leading-[1.2] text-primary-black outline-none transition-colors placeholder:text-[#999999] focus:border-[#0099ff] focus:ring-1 focus:ring-[#0099ff]'
+import {
+  fieldClassName,
+  formContainerClassName,
+  phoneInputClassName,
+  phoneSelectClassName,
+} from '@/components/form-styles'
 
 const COUNTRY_CODES = [
   { code: 'US', label: 'US +1' },
@@ -122,7 +125,7 @@ export function CustomQuotePageForm() {
 
   if (status === 'success') {
     return (
-      <div className="flex w-full flex-col gap-4 p-5 text-center">
+      <div className={`${formContainerClassName} text-center`}>
         <h2 className="t-title text-primary-black">Thank you!</h2>
         <p className="t-body text-primary-black">
           Your quote request has been submitted. Our sales team will be in touch shortly.
@@ -139,7 +142,7 @@ export function CustomQuotePageForm() {
   }
 
   return (
-    <form className="flex w-full flex-col gap-5 p-5" onSubmit={handleSubmit}>
+    <form className={formContainerClassName} onSubmit={handleSubmit}>
       <SelectField
         label="What kind of construction work do you primarily undertake?"
         name="constructionWork"
@@ -223,7 +226,7 @@ export function CustomQuotePageForm() {
             defaultValue="US"
             disabled={status === 'loading'}
             aria-label="Country code selector"
-            className="h-10 shrink-0 rounded-lg border border-[rgb(238,238,238)] bg-white px-4 font-inter text-sm text-primary-black outline-none focus:border-[#0099ff] focus:bg-[rgb(245,245,245)] disabled:cursor-not-allowed disabled:opacity-60"
+            className={phoneSelectClassName}
           >
             {COUNTRY_CODES.map((country) => (
               <option key={country.code} value={country.code}>
@@ -237,7 +240,7 @@ export function CustomQuotePageForm() {
             disabled={status === 'loading'}
             placeholder="Phone number"
             aria-label="Phone number input"
-            className="h-10 min-w-0 flex-1 rounded-lg border border-[rgb(238,238,238)] bg-white px-4 font-inter text-sm text-primary-black outline-none placeholder:text-[#999999] focus:border-[#0099ff] focus:bg-[rgb(245,245,245)] disabled:cursor-not-allowed disabled:opacity-60"
+            className={phoneInputClassName}
           />
         </div>
       </FormField>

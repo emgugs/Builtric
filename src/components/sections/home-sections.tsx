@@ -189,7 +189,7 @@ export function AboutPreviewSection() {
             </div>
 
             <BuiltricButton
-              label="Find Out More"
+              label="See How It Works"
               href="/builtric-about"
               className="h-[42px] w-[156px] justify-center"
             />

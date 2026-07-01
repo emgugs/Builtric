@@ -85,9 +85,7 @@ function AboutStatsStrip() {
             <p className="font-archivo text-[clamp(2.5rem,2rem+2vw,3.5rem)] font-bold leading-none tracking-[-0.02em] text-hero-yellow">
               971
             </p>
-            <p className="t-body text-primary-white/90">
-              contracts managed across Local Development Program and PRMSC initiatives
-            </p>
+            <p className="t-body text-primary-white/90">Total Contract Managed</p>
           </div>
 
           <div
@@ -96,10 +94,10 @@ function AboutStatsStrip() {
           />
 
           <div className="flex flex-1 flex-col gap-3">
-            <p className="font-archivo text-[clamp(2rem,1.5rem+1.5vw,3rem)] font-bold leading-none tracking-[-0.02em] text-hero-yellow">
-              PKR 147 billion
+            <p className="font-archivo text-[clamp(2.5rem,2rem+2vw,3.5rem)] font-bold leading-none tracking-[-0.02em] text-hero-yellow">
+              $1B+
             </p>
-            <p className="t-body text-primary-white/90">in project value handled digitally</p>
+            <p className="t-body text-primary-white/90">Total Project Worth</p>
           </div>
         </div>
       </div>
@@ -110,7 +108,7 @@ function AboutStatsStrip() {
 function AboutStorySection() {
   return (
     <section className="w-full px-site py-14">
-      <div className="site-container flex flex-col items-start gap-14 py-6 lg:flex-row lg:gap-14">
+      <div className="site-container flex flex-col-reverse items-start gap-14 py-6 lg:flex-row lg:gap-14">
         <div className="relative h-[420px] w-full shrink-0 overflow-hidden rounded-xl lg:w-[420px]">
           <Image
             src={STORY_IMAGE}
@@ -122,7 +120,7 @@ function AboutStorySection() {
         </div>
         <div className="flex flex-1 flex-col gap-8">
           <h2 className="t-heading text-primary-black">
-            Story
+            Our Story
           </h2>
           <div className="flex flex-col gap-5">
             {STORY_PARAGRAPHS.map((paragraph) => (

@@ -1,6 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import {
+  fieldClassName,
+  formContainerClassName,
+  phoneInputClassName,
+  phoneSelectClassName,
+  textareaClassName,
+} from '@/components/form-styles'
 
 const COMPANY_TYPES = [
   'Main Contractor',
@@ -36,15 +43,11 @@ const COUNTRY_CODES = [
 
 type RequestType = (typeof REQUEST_TYPES)[number]
 
-const fieldClassName =
-  'h-10 w-full rounded-[10px] border border-[rgba(136,136,136,0.1)] bg-white px-3 font-inter text-sm leading-[1.2] text-primary-black outline-none transition-colors placeholder:text-[#999999] focus:border-[#0099ff] focus:ring-1 focus:ring-[#0099ff]'
-
-const textareaClassName =
-  'min-h-[120px] w-full resize-y rounded-[10px] border border-[rgba(136,136,136,0.1)] bg-white px-3 py-2.5 font-inter text-sm leading-[1.4] text-primary-black outline-none transition-colors placeholder:text-[#999999] focus:border-[#0099ff] focus:ring-1 focus:ring-[#0099ff]'
+const fieldLabelClassName = 'font-inter text-sm font-medium text-[rgb(136,136,136)]'
 
 function FieldLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="font-inter text-sm font-medium text-[rgb(136,136,136)]">{children}</span>
+    <span className={fieldLabelClassName}>{children}</span>
   )
 }
 
@@ -165,7 +168,7 @@ export function ContactPageForm() {
 
   if (status === 'success') {
     return (
-      <div className="flex w-full flex-col gap-4 p-5 text-center">
+      <div className={`${formContainerClassName} text-center`}>
         <h2 className="t-title text-primary-black">Thank you!</h2>
         <p className="t-body text-primary-black">
           Your request has been submitted. Our team will be in touch shortly.
@@ -182,7 +185,7 @@ export function ContactPageForm() {
   }
 
   return (
-    <form className="flex w-full flex-col gap-5 p-5" onSubmit={handleSubmit}>
+    <form className={formContainerClassName} onSubmit={handleSubmit}>
       <FormField label="Type of Request">
         <SelectInput
           name="requestType"
@@ -261,7 +264,7 @@ export function ContactPageForm() {
             defaultValue="US"
             disabled={status === 'loading'}
             aria-label="Country code selector"
-            className="h-10 shrink-0 rounded-lg border border-[rgb(238,238,238)] bg-white px-4 font-inter text-sm text-primary-black outline-none focus:border-[#0099ff] focus:bg-[rgb(245,245,245)] disabled:cursor-not-allowed disabled:opacity-60"
+            className={phoneSelectClassName}
           >
             {COUNTRY_CODES.map((country) => (
               <option key={country.code} value={country.code}>
@@ -275,7 +278,7 @@ export function ContactPageForm() {
             disabled={status === 'loading'}
             placeholder="Phone number"
             aria-label="Phone number input"
-            className="h-10 min-w-0 flex-1 rounded-lg border border-[rgb(238,238,238)] bg-white px-4 font-inter text-sm text-primary-black outline-none placeholder:text-[#999999] focus:border-[#0099ff] focus:bg-[rgb(245,245,245)] disabled:cursor-not-allowed disabled:opacity-60"
+            className={phoneInputClassName}
           />
         </div>
       </FormField>
@@ -305,7 +308,7 @@ export function ContactPageForm() {
         disabled={status === 'loading'}
         className="h-10 w-full rounded-md bg-primary-black font-inter text-sm font-semibold text-white transition-colors hover:bg-[rgb(47,53,61)] active:bg-[rgb(26,29,33)] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === 'loading' ? 'Sending…' : 'Send Request'}
+        {status === 'loading' ? 'Sending…' : 'Submit Request'}
       </button>
 
       <p className="font-inter text-xs leading-[1.3] text-[rgb(99,99,99)]">
