@@ -131,11 +131,18 @@ export function BuiltricButton({
 export function BuiltricButtonGroup({
   children,
   className = '',
+  stackEqualWidth = false,
 }: {
   children: React.ReactNode
   className?: string
+  /** Stack buttons full-width in one column below 810px */
+  stackEqualWidth?: boolean
 }) {
+  const layoutClasses = stackEqualWidth
+    ? 'flex-col items-stretch max-[809px]:[&_a]:!w-full min-[810px]:flex-row min-[810px]:flex-wrap min-[810px]:items-center'
+    : 'flex-wrap items-center'
+
   return (
-    <div className={`flex flex-wrap items-center gap-2.5 pr-1 ${className}`}>{children}</div>
+    <div className={`flex gap-2.5 pr-1 ${layoutClasses} ${className}`}>{children}</div>
   )
 }

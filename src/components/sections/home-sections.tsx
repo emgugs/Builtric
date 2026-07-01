@@ -27,7 +27,10 @@ export function HeroSection() {
           Get total control of your construction projects to protect your margins, schedules, and
           mission-critical risks.
         </p>
-        <BuiltricButtonGroup className="justify-center py-3 min-[810px]:justify-start">
+        <BuiltricButtonGroup
+          stackEqualWidth
+          className="mx-auto w-full max-w-[240px] justify-center py-3 min-[810px]:mx-0 min-[810px]:max-w-none min-[810px]:justify-start"
+        >
           <BuiltricButton label="Product Features" href="/builtric-features" onDark />
           <BuiltricButton label="Try Now" href="/builtric-demo" variant="cta" />
         </BuiltricButtonGroup>
@@ -55,7 +58,7 @@ export function PlatformSection() {
       className="w-full px-site py-10 min-[810px]:py-12 min-[810px]:pb-[87px] min-[1200px]:pt-[62px]"
       style={{ background: PLATFORM_GRADIENT }}
     >
-      <div className="site-container flex min-w-0 flex-col items-stretch gap-8 min-[810px]:flex-row min-[810px]:items-start min-[810px]:gap-10">
+      <div className="site-container flex min-w-0 flex-col-reverse items-stretch gap-8 min-[810px]:flex-row min-[810px]:items-start min-[810px]:gap-10">
         <ScrollReveal delay={80} className="z-[2] w-full min-w-0 min-[810px]:w-[45%]">
           <Image
             src={PLATFORM_IMAGE}

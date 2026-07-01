@@ -150,14 +150,14 @@ export function SiteNavigation() {
             ))}
           </div>
 
-          <div className="flex shrink-0 flex-row items-center gap-2 pb-2 pt-4">
+          <div className="flex shrink-0 flex-col gap-2 pb-2 pt-4">
             <BuiltricButton
               label="Try Now"
               href="/builtric-demo"
               variant="try-black"
-              className="!h-[42px] min-w-0 flex-1 !w-auto"
+              className="!h-[42px] !w-full justify-center"
             />
-            <LoginButton className="min-w-0 flex-1" />
+            <LoginButton className="w-full" />
           </div>
         </div>
       </nav>

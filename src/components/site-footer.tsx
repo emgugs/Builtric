@@ -65,7 +65,7 @@ export function SiteFooter() {
       </div>
 
       <div className="site-container relative flex flex-col gap-7 md:gap-[18px]">
-        <Link href="/" aria-label="Builtric home" className="w-fit">
+        <Link href="/" aria-label="Builtric home" className="w-fit self-center md:self-auto">
           <BuiltricLogo variant="light" />
         </Link>
 

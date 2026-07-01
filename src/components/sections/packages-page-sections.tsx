@@ -244,8 +244,8 @@ function PackagesComparisonMatrix() {
                       scope="row"
                       className="sticky left-0 z-10 border-b border-black/8 bg-white py-3 pl-8 pr-4 text-left font-normal sm:py-3.5 sm:pl-10 sm:pr-6"
                     >
-                      <p className="t-body text-primary-black">
-                        {row.label}
+                      <p className="t-small text-primary-black">
+                        – {row.label}
                       </p>
                       {row.details?.map((detail) => (
                         <p
@@ -306,8 +306,8 @@ function PackagesMobilePlans() {
                       key={`${plan.key}-${category.title}-${row.label}`}
                       className="flex items-center justify-between gap-3 py-3 pl-8 pr-4"
                     >
-                      <p className="t-body min-w-0 flex-1 text-primary-black">
-                        {row.label}
+                      <p className="t-small min-w-0 flex-1 text-primary-black">
+                        – {row.label}
                       </p>
                       {row.included[plan.key] ? (
                         <TickIcon />
