@@ -354,18 +354,20 @@ export function PackagesPageContent() {
   return (
     <>
       <section className="w-full overflow-hidden bg-primary-white px-site pb-9 pt-page-hero">
-        <div className="site-container flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-          <div className="flex flex-1 flex-col gap-2.5">
-            <p className="t-eyebrow t-eyebrow-pill-white w-fit text-primary-black">
-              Packages
-            </p>
-            <h1 className="page-hero-title text-primary-black">
-              Solutions tailored to your scale
-            </h1>
-          </div>
-          <p className="page-hero-lead flex-1 text-primary-black">
-            Flexible packages designed around how construction teams actually work.
+        <div className="site-container flex flex-col gap-8">
+          <p className="t-eyebrow t-eyebrow-pill-white w-fit text-primary-black">
+            Packages
           </p>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-1 flex-col gap-2.5">
+              <h1 className="page-hero-title text-primary-black">
+                Solutions tailored to your scale
+              </h1>
+            </div>
+            <p className="page-hero-lead flex-1 text-primary-black">
+              Flexible packages designed around how construction teams actually work.
+            </p>
+          </div>
         </div>
       </section>
 
