@@ -358,7 +358,7 @@ export function PackagesPageContent() {
           <p className="t-eyebrow t-eyebrow-pill-white w-fit text-primary-black">
             Packages
           </p>
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
             <div className="flex flex-1 flex-col gap-2.5">
               <h1 className="page-hero-title text-primary-black">
                 Solutions tailored to your scale
