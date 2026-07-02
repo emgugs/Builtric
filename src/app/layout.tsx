@@ -2,6 +2,7 @@ import { Archivo, Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import '@/framer/styles.css'
 import './globals.css'
+import { GoogleAnalytics } from '@/components/google-analytics'
 import { Providers } from '@/components/providers'
 
 const inter = Inter({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${inter.variable} ${archivo.variable} antialiased`}>
+        <GoogleAnalytics />
         <Providers>{children}</Providers>
       </body>
     </html>
