@@ -38,7 +38,7 @@ function AboutHeroSection() {
       <section className="relative h-[400px] w-full overflow-hidden">
         <Image
           src={HERO_IMAGE}
-          alt=""
+          alt="Construction professionals collaborating on a building project"
           fill
           className="object-cover"
           sizes="100vw"
@@ -65,7 +65,7 @@ function AboutMissionSection() {
         <div className="relative h-[420px] w-full shrink-0 overflow-hidden rounded-xl lg:w-[420px]">
           <Image
             src={MISSION_IMAGE}
-            alt=""
+            alt="Construction team planning a project using digital tools"
             fill
             className="object-cover"
             sizes="420px"
@@ -112,7 +112,7 @@ function AboutStorySection() {
         <div className="relative h-[420px] w-full shrink-0 overflow-hidden rounded-xl lg:w-[420px]">
           <Image
             src={STORY_IMAGE}
-            alt=""
+            alt="Builtric team members working together in a modern office"
             fill
             className="object-cover"
             sizes="420px"

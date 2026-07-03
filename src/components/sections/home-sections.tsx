@@ -8,7 +8,7 @@ export function HeroSection() {
     <section className="relative flex min-h-screen w-full items-start justify-center px-site pb-9 pt-page-hero text-center min-[810px]:justify-start min-[810px]:text-left">
       <Image
         src="/images/hero.webp"
-        alt=""
+        alt="Construction site with workers and building structures"
         fill
         priority
         sizes="100vw"
@@ -240,7 +240,7 @@ export function EmpowersSection() {
               delay={index * 80}
               className="flex flex-col items-center gap-4 text-center"
             >
-              <Image src={item.image} alt="" width={100} height={100} />
+              <Image src={item.image} alt={item.title} width={100} height={100} />
               <h3 className="t-title text-primary-black">{item.title}</h3>
               <p className="t-small text-dark-grey">{item.description}</p>
             </ScrollReveal>

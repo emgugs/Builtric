@@ -53,7 +53,7 @@ function FeaturesHero() {
       </section>
 
       <section className="relative h-[400px] w-full overflow-hidden">
-        <Image src={HERO_IMAGE} alt="" fill className="object-cover" sizes="100vw" priority />
+        <Image src={HERO_IMAGE} alt="Construction project site overview" fill className="object-cover" sizes="100vw" priority />
       </section>
     </>
   )
@@ -78,7 +78,7 @@ function ConnectedDataSection() {
               key={item.title}
               className="flex h-[320px] flex-col items-center justify-center gap-3 rounded-[20px] bg-white p-3 text-center"
             >
-              <Image src={item.image} alt="" width={100} height={100} />
+              <Image src={item.image} alt={item.title} width={100} height={100} />
               <div className="flex flex-col gap-1.5 px-2">
                 <h3 className="t-title text-primary-black">
                   {item.title}

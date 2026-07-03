@@ -15,7 +15,7 @@ function PortalAccessSection() {
             Already a Builtric user? Log In instead.
           </p>
           <Link
-            href="http://app.builtric.com"
+            href="https://app.builtric.com"
             className="inline-flex h-9 w-[148px] items-center justify-center rounded-[4px] bg-primary-black font-inter text-sm font-semibold text-white no-underline transition-colors hover:bg-[rgb(54,62,71)]"
           >
             Log In

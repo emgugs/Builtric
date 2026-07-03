@@ -219,6 +219,7 @@ export function LegalPageContent() {
   return (
     <section className="w-full bg-white px-site pb-[132px] pt-page-hero">
       <div className="site-container flex flex-col gap-[111px] py-6">
+        <h1 className="t-heading text-primary-black">Privacy Policy &amp; Terms of Service</h1>
         <PrivacyPolicySection />
         <TermsSection />
       </div>

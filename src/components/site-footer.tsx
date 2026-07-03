@@ -13,10 +13,12 @@ const NEW_TO_BUILTRIC_LINKS = [
   { label: 'Features', href: '/builtric-features' },
   { label: 'Try Builtric', href: '/builtric-demo' },
   { label: 'Packages', href: '/builtric-packages' },
+  { label: 'Custom Quote', href: '/builtric-custom-quote' },
 ] as const
 
 const ABOUT_BUILTRIC_LINKS = [
   { label: 'About Us', href: '/builtric-about' },
+  { label: 'News', href: '/builtric-news' },
   { label: 'Contact', href: '/builtric-contact' },
   { label: 'Legal', href: '/builtric-legal' },
 ] as const

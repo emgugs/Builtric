@@ -1,0 +1,35 @@
+# Builtric
+
+> Builtric is a construction management software platform that unifies procurement, finance, project delivery, dashboards, and reporting into one source of truth. Built by LMKR, it helps construction teams protect margins, schedules, and mission-critical risks from planning to handover.
+
+Builtric serves contractors, project managers, developers, and consultants with role-specific tools for real-time project visibility, financial control, and coordinated decision-making.
+
+- Website: https://builtric.com
+- Product app: https://app.builtric.com
+- Contact: https://builtric.com/builtric-contact
+
+## Core pages
+
+- [Home](https://builtric.com/): Construction management software overview — unified project intelligence, real-time visibility, and platform capabilities
+- [Features](https://builtric.com/builtric-features): Procurement, finance, project management, HSE, data management, dashboards, and secure construction data
+- [Packages](https://builtric.com/builtric-packages): Standard, Professional, and Enterprise plans with feature comparison
+- [Who We Serve](https://builtric.com/builtric-who-we-serve): Solutions for contractors, project managers, developers, and consultants
+- [About](https://builtric.com/builtric-about): Company story, mission, and track record (971 contracts managed, $1B+ project value handled digitally)
+
+## Get started
+
+- [Book a Demo](https://builtric.com/builtric-demo): Request a personalised Builtric product demonstration
+- [Custom Quote](https://builtric.com/builtric-custom-quote): Request a tailored quote based on team size, workflows, and integrations
+- [Contact](https://builtric.com/builtric-contact): Talk to the Builtric team about pricing, implementation, or partnerships
+
+## News
+
+- [News & Updates](https://builtric.com/builtric-news): Product updates, company news, and construction industry insights
+
+## Optional
+
+- [Privacy Policy & Terms](https://builtric.com/builtric-legal): Privacy policy and terms of service
+- [LinkedIn](https://www.linkedin.com/company/builtric/): Builtric company profile
+- [Instagram](https://www.instagram.com/builtric.official/): Builtric official Instagram
+- [Sitemap](https://builtric.com/sitemap.xml): Full list of indexable pages
+- [Extended guide](https://builtric.com/llms-full.txt): Detailed product, package, and content reference for AI systems

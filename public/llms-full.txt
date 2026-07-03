@@ -1,0 +1,88 @@
+# Builtric
+
+> Builtric is a 360° construction intelligence platform — construction management software that connects procurement, finance, project management, dashboards, and reporting in a single source of truth. Built by LMKR, a digital transformation partner with over 30 years of experience across technology, energy, and infrastructure.
+
+This extended file provides additional context for AI systems that need deeper product, audience, and content detail. For a concise index, see https://builtric.com/llms.txt.
+
+## Product summary
+
+Builtric helps construction teams:
+
+- Monitor finances, schedule, and risk in real time
+- Manage procurement, contracts, BOQ configuration, and variation orders
+- Handle end-to-end IPC (Interim Payment Certificates) and financial workflows
+- Coordinate site and office teams through shared documentation and approvals
+- Gain portfolio-wide visibility across multiple active builds
+- Standardize delivery with repeatable workflows from tender to handover
+
+Primary value proposition: eliminate silos, act on issues earlier, and make faster decisions with unified project data.
+
+## Packages
+
+Builtric offers three tiers (see https://builtric.com/builtric-packages):
+
+- **Standard**: Ideal for single-project teams getting started. Includes procurement management, financial management, project management, master data management, and dashboard & reporting.
+- **Professional**: Best for growing teams managing multiple active projects. Adds ERP API integrations and project cost estimation.
+- **Enterprise**: For large portfolios requiring ERP integration and dedicated support. Adds a dedicated success manager.
+
+Custom packages are available via https://builtric.com/builtric-custom-quote.
+
+## Who we serve
+
+- **Contractors**: Operational control, productivity measurement, cost and risk management, scalable workflows
+- **Project Managers**: Unified project view, structured collaboration, actionable alerts, execution excellence
+- **Developers**: Portfolio-wide visibility, strategic decision support, standardized delivery, real-time financial insight
+- **Consultants**: On-site quality validation, compliance verification, IPC review and approval, Secure Advances governance
+
+Full details: https://builtric.com/builtric-who-we-serve
+
+## Key features
+
+- Procurement management (contracts, BOQ configuration)
+- Financial management (IPC, budget tracking, variation control)
+- Project management (plans, quality inspection, progress verification)
+- HSE management
+- Master data management
+- Dashboards and reporting
+- ERP API integrations (Professional and Enterprise)
+- Project cost estimation (Professional and Enterprise)
+
+Full feature overview: https://builtric.com/builtric-features
+
+## Company & trust signals
+
+- Built by LMKR: https://lmkr.com
+- 971 contracts managed across Local Development Program and PRMSC initiatives
+- $1B+ in project value handled digitally
+- Privacy policy and terms: https://builtric.com/builtric-legal
+- Support contacts: support@builtric.com, billing@builtric.com, privacy@builtric.com, legal@builtric.com
+
+About page: https://builtric.com/builtric-about
+
+## News articles
+
+- [Getting started with Builtric](https://builtric.com/builtric-news/getting-started-with-buildtric): Onboard your first project and configure core modules
+- [Getting started with Builtric — Part two](https://builtric.com/builtric-news/getting-started-with-buildtric-two): Dashboards, reporting, and team permissions
+- [News article title one](https://builtric.com/builtric-news/news-article-title-one): Product releases and customer stories
+- [News article title two](https://builtric.com/builtric-news/news-article-title-two): Unified data for protecting project margins
+
+News index: https://builtric.com/builtric-news
+
+## Actions
+
+| Intent | URL |
+|--------|-----|
+| Book a demo | https://builtric.com/builtric-demo |
+| Request custom quote | https://builtric.com/builtric-custom-quote |
+| Contact sales or support | https://builtric.com/builtric-contact |
+| Log in to product | https://app.builtric.com |
+
+## Social
+
+- LinkedIn: https://www.linkedin.com/company/builtric/
+- Instagram: https://www.instagram.com/builtric.official/
+
+## Technical reference
+
+- Sitemap: https://builtric.com/sitemap.xml
+- Robots: https://builtric.com/robots.txt

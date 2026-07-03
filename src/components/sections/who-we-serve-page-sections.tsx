@@ -184,7 +184,7 @@ function WhoWeServeHero() {
       </section>
 
       <section className="relative h-[400px] w-full overflow-hidden">
-        <Image src={HERO_IMAGE} alt="" fill className="object-cover" sizes="100vw" priority />
+        <Image src={HERO_IMAGE} alt="Construction professionals on a project site" fill className="object-cover" sizes="100vw" priority />
       </section>
     </>
   )
@@ -202,7 +202,7 @@ function BenefitText({ title, description }: { title: string; description: strin
 function RoleSectionBlock({ section, id }: { section: RoleSection; id?: string }) {
   const imageEl = (
     <div className="relative h-[420px] w-full shrink-0 overflow-hidden rounded-xl lg:w-[420px]">
-      <Image src={section.image} alt="" fill className="object-cover" sizes="420px" />
+      <Image src={section.image} alt={`${section.title} using Builtric on a construction project`} fill className="object-cover" sizes="420px" />
     </div>
   )
 
@@ -271,7 +271,7 @@ function CoreBenefitsSection() {
             key={item.title}
             className="flex h-[320px] flex-col items-center justify-center gap-3 rounded-[20px] bg-white p-3 text-center"
           >
-            <Image src={item.image} alt="" width={100} height={100} />
+            <Image src={item.image} alt={item.title} width={100} height={100} />
             <div className="flex flex-col gap-1.5 px-2">
               <h3 className="t-title text-primary-black">
                 {item.title}
