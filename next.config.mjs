@@ -7,6 +7,20 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const nextConfig = {
   reactStrictMode: false,
   outputFileTracingRoot: path.join(__dirname),
+  async redirects() {
+    return [
+      {
+        source: '/builtric-news',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/builtric-news/:slug',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
   images: {
     remotePatterns: [
       {

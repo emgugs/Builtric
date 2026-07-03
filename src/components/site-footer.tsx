@@ -18,7 +18,6 @@ const NEW_TO_BUILTRIC_LINKS = [
 
 const ABOUT_BUILTRIC_LINKS = [
   { label: 'About Us', href: '/builtric-about' },
-  { label: 'News', href: '/builtric-news' },
   { label: 'Contact', href: '/builtric-contact' },
   { label: 'Legal', href: '/builtric-legal' },
 ] as const

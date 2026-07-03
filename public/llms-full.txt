@@ -59,15 +59,6 @@ Full feature overview: https://builtric.com/builtric-features
 
 About page: https://builtric.com/builtric-about
 
-## News articles
-
-- [Getting started with Builtric](https://builtric.com/builtric-news/getting-started-with-buildtric): Onboard your first project and configure core modules
-- [Getting started with Builtric — Part two](https://builtric.com/builtric-news/getting-started-with-buildtric-two): Dashboards, reporting, and team permissions
-- [News article title one](https://builtric.com/builtric-news/news-article-title-one): Product releases and customer stories
-- [News article title two](https://builtric.com/builtric-news/news-article-title-two): Unified data for protecting project margins
-
-News index: https://builtric.com/builtric-news
-
 ## Actions
 
 | Intent | URL |

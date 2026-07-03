@@ -22,10 +22,6 @@ Builtric serves contractors, project managers, developers, and consultants with 
 - [Custom Quote](https://builtric.com/builtric-custom-quote): Request a tailored quote based on team size, workflows, and integrations
 - [Contact](https://builtric.com/builtric-contact): Talk to the Builtric team about pricing, implementation, or partnerships
 
-## News
-
-- [News & Updates](https://builtric.com/builtric-news): Product updates, company news, and construction industry insights
-
 ## Optional
 
 - [Privacy Policy & Terms](https://builtric.com/builtric-legal): Privacy policy and terms of service

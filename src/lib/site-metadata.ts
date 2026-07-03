@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { newsArticles } from '@/data/news'
 
 export const SITE_URL = 'https://builtric.com'
 export const SITE_NAME = 'Builtric'
@@ -17,14 +16,12 @@ type PageMetaInput = {
   title: string
   description: string
   path: string
-  openGraphType?: 'website' | 'article'
 }
 
 export function pageMetadata({
   title,
   description,
   path,
-  openGraphType = 'website',
 }: PageMetaInput): Metadata {
   const canonicalPath = path.startsWith('/') ? path : `/${path}`
 
@@ -41,7 +38,7 @@ export function pageMetadata({
       description,
       url: canonicalPath,
       siteName: SITE_NAME,
-      type: openGraphType,
+      type: 'website',
       images: [
         {
           url: DEFAULT_OG_IMAGE,
@@ -92,16 +89,10 @@ export const pageSeo = {
     path: '/builtric-features',
   }),
   legal: pageMetadata({
-    title: 'Privacy Policy & Terms of Service',
+    title: 'Builtric Legal — Privacy Policy & Terms',
     description:
       'Read the Builtric privacy policy and terms of service covering data handling, platform use, billing, and support.',
     path: '/builtric-legal',
-  }),
-  news: pageMetadata({
-    title: 'Builtric News & Product Updates',
-    description:
-      'Explore Builtric product updates, company news, partnerships, and insights for construction project teams.',
-    path: '/builtric-news',
   }),
   packages: pageMetadata({
     title: 'Construction Software Packages & Pricing',
@@ -117,21 +108,6 @@ export const pageSeo = {
   }),
 } as const
 
-export function newsArticleMetadata(slug: string): Metadata {
-  const article = newsArticles.find((item) => item.slug === slug)
-
-  if (!article) {
-    return pageSeo.news
-  }
-
-  return pageMetadata({
-    title: article.title,
-    description: article.excerpt,
-    path: `/builtric-news/${slug}`,
-    openGraphType: 'article',
-  })
-}
-
 export const staticRoutes = [
   '/',
   '/builtric-about',
@@ -140,7 +116,6 @@ export const staticRoutes = [
   '/builtric-demo',
   '/builtric-features',
   '/builtric-legal',
-  '/builtric-news',
   '/builtric-packages',
   '/builtric-who-we-serve',
 ] as const

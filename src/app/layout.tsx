@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import '@/framer/styles.css'
 import './globals.css'
 import { GoogleAnalytics } from '@/components/google-analytics'
-import { OrganizationStructuredData, SoftwareApplicationStructuredData } from '@/components/structured-data'
+import { OrganizationStructuredData } from '@/components/structured-data'
 import { Providers } from '@/components/providers'
 import {
   DEFAULT_DESCRIPTION,
@@ -66,7 +66,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${inter.variable} ${archivo.variable} antialiased`}>
         <OrganizationStructuredData />
-        <SoftwareApplicationStructuredData />
         <GoogleAnalytics />
         <Providers>{children}</Providers>
       </body>
