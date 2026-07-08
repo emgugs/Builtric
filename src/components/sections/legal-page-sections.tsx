@@ -105,15 +105,15 @@ function PrivacyPolicySection() {
         <p>6. Security</p>
         <p>
           We implement industry-standard measures to protect your data against unauthorised access or
-          disclosure. No method of internet transmission is 100% secure, but we take reasonable
-          precautions to safeguard your information.
+          disclosure. No method of internet transmission is 100% secure, however, we take reasonably
+          necessary precautions in order to safeguard your information.
         </p>
         <p>7. Your Rights</p>
         <p>
           Depending on your location, you may have the right to access, correct, delete, or export
           your personal data, and to withdraw consent where processing is based on it. To exercise
-          any of these rights, contact us at <LegalEmailLink email="privacy@builtric.com" />. We will
-          respond within 30 days.
+          any of these rights, contact us at <LegalEmailLink email="privacy@builtric.com" />. We
+          shall endeavor to respond within 30 days.
         </p>
         <p>8. Children&apos;s Privacy</p>
         <p>
@@ -139,8 +139,9 @@ function TermsSection() {
         </p>
         <p>
           These Terms and Conditions govern your access to and use of Builtric&apos;s website,
-          applications, and services. By using our Service, you agree to these Terms. If you do not
-          agree, please do not use our Service.
+          applications, and services. By using our Service, you agree to these Terms. In case you
+          do not any agree to any of these Terms, and still continue to use the Service, we shall
+          not liable for any loss, claim, or damages, in any form or manner whatsoever.
         </p>
         <p>1. Use of the Service</p>
         <p>
@@ -174,40 +175,47 @@ function TermsSection() {
           To the fullest extent permitted by law, Builtric shall not be liable for any indirect,
           incidental, or consequential damages arising from your use of the Service. Our total
           liability for any claim shall not exceed the greater of the amount you paid to Builtric in
-          the preceding twelve months or £100.
+          the preceding twelve months or £100, whichever is lesser.
         </p>
         <p>6. Disclaimer of Warranties</p>
         <p>
           The Service is provided &quot;as is&quot; without warranties of any kind. Builtric does not
           guarantee that the Service will be uninterrupted, error-free, or free of harmful components.
         </p>
-        <p>7. Third-Party Links &amp; Services</p>
+        <p>7. Indemnification</p>
+        <p>
+          You agree to indemnify and hold harmless Builtric, its affiliates, officers, employees,
+          and agents from any claims, liabilities, losses, and expenses (including reasonable legal
+          fees) arising out of your use of the Service, any content you submit, or your breach of
+          these Terms or applicable law. This clause survives termination of these Terms.
+        </p>
+        <p>8. Third-Party Links &amp; Services</p>
         <p>
           The Service may link to or integrate with third-party services. Builtric is not responsible
           for the content or practices of those third parties, and your use of them is at your own
-          risk.
+          risk. Builtric shall not be held liable in case of the occurrence of any such interruption
+          in the Service, glitch, error, or harmful components.
         </p>
-        <p>8. Termination</p>
+        <p>9. Termination</p>
         <p>
           Builtric may suspend or terminate your access at any time for conduct that violates these
           Terms. You may close your account at any time by contacting us.
         </p>
-        <p>9. Governing Law</p>
+        <p>10. Governing Law</p>
         <p>
           These Terms are governed by the laws of England and Wales. Any disputes shall be subject to
-          the exclusive jurisdiction of the courts of England and Wales. We encourage you to contact{' '}
-          <LegalEmailLink email="legal@builtric.com" /> first to resolve any issue informally.
+          the exclusive jurisdiction of the courts of England and Wales. We encourage you to
+          contact <LegalEmailLink email="legal@builtric.com" /> first to resolve any issue
+          informally.
         </p>
-        <p>10. Changes to These Terms</p>
+        <p>11. Changes to These Terms</p>
         <p>
-          We may revise these Terms at any time. Continued use of the Service after changes take effect
-          constitutes acceptance. We will give at least 14 days&apos; notice of any material changes.
+          We may revise these Terms at any time. Continued use of the Service after changes take
+          effect constitutes acceptance. We will give at least 14 days&apos; notice of any material
+          changes.
         </p>
-        <p className="italic">
-          For any questions about these policies, contact{' '}
-          <em>
-            <LegalEmailLink email="legal@builtric.com" />
-          </em>
+        <p>
+          For any questions about these policies, contact <LegalEmailLink email="legal@builtric.com" />
           .
         </p>
       </LegalBody>
